@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8-np8na5e61kdxpth@mg54$sz_u582=nht1r&a)xdb!eo-zcz6'
+SECRET_KEY = 'django-insecure-m8q0+la2d)8lbyzztgq**ln)q)vs6*jwwl^6-%zgsls(3_znur'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +83,6 @@ DATABASES = {
         'PORT': '5432',  # El puerto predeterminado de PostgreSQL
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
