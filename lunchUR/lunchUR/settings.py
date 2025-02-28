@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mi_admin'
+
 ]
 
 MIDDLEWARE = [
@@ -76,7 +78,7 @@ WSGI_APPLICATION = 'lunchUR.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'LunchUR',
+        'NAME': 'LunchUR_db',
         'USER': 'postgres',
         'PASSWORD': '123456789',
         'HOST': 'localhost',  # O la dirección del servidor PostgreSQL

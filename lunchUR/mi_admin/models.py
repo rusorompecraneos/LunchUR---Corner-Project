@@ -9,6 +9,5 @@ class usuarios(models.Model):
 class menus(models.Model):
     nombre_menu = models.CharField(max_length=30)
     descripcion = models.CharField(max_length=100)
-    icono = models.CharField(max_length=200)
-    
-    
+    icono = models.CharField(max_length=100)
+    campo = models.CharField(max_length=70)

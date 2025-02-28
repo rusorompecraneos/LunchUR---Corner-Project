@@ -1,6 +1,6 @@
 from django.contrib import admin
-from admin.models import usuarios
-from admin.models import menus
+from mi_admin.models import usuarios
+from mi_admin.models import menus
 
 
 # Register your models here.
