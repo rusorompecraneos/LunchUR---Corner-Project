@@ -8,8 +8,8 @@ from .views import RegistroUsuario  # Importa el registro que se hizo en la vist
 
 urlpatterns = [
     path('mi-vista/', views.mi_vista, name='mi_vista'),
-    path('', views.mi_vista, name='home'), 
-    path('login/', LoginUsuario.as_view(), name='login'),
+    path('mi_vista', views.mi_vista, name='home'), 
+    path('', LoginUsuario.as_view(), name='login'),
     path('registro/', RegistroUsuario.as_view(), name='registro')
 ]
 
