@@ -39,5 +39,5 @@ class RegistroUsuario(View):
                 correo_electronico=correo_electronico,
                 contraseña=make_password(password) #hasheamos la contraseña.
             )
-            return redirect('login') #redirigimos al usuario a la pagina de login.
+            return redirect('login') 
                   

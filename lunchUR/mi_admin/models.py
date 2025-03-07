@@ -5,7 +5,7 @@ class usuarios(models.Model):
     nombre = models.CharField(max_length=60)
     numero_id = models.IntegerField(max_length=30)
     correo_electronico = models.EmailField(unique=True)
-    contraseña = models.CharField(max_length=30)
+    contraseña = models.CharField(max_length=10)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
