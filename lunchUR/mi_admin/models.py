@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class usuarios(models.Model):
     nombre = models.CharField(max_length=60)
-    numero_id = models.IntegerField(max_length=30)
+    numero_id = models.IntegerField()
     correo_electronico = models.EmailField(unique=True)
     contraseña = models.CharField(max_length=10)
     fecha_registro = models.DateTimeField(auto_now_add=True)
@@ -12,32 +12,30 @@ class usuarios(models.Model):
         return self.nombre
 
 class menus(models.Model):
-    nombre_menu = models.CharField(max_length=30)
-    descripcion = models.CharField(max_length=100)
+    nombre_menu = models.CharField(max_length=40)
+    descripcion = models.CharField(max_length=200)
 
     def __str__(self):
         return self.nombre_menu
     
 class alimentos_menu(models.Model):
-    num_alimentos = models.IntegerField()
-    ensaladas_nombre = models.CharField(max_length=20)
-    vegetales_nombre = models.CharField(max_length=20)
-    postres_nombre = models.CharField(max_length=20)
-    bebidas_nombre = models.CharField(max_length=20)
-    carnes_nombre = models.CharField(max_length=20)
+    num_alimentos = models.IntegerField(null=True, blank=True)
+    proteina_menu = models.CharField(null=True, blank=True)
+    carbohidratos_menu = models.CharField(null=True, blank=True)
+    grasas_menu = models.CharField(null=True, blank=True)
+    ensaldas_menu = models.CharField(null=True, blank=True)
     
     def __str__(self):
-        return self.num_alimentos
+        return str(self.num_alimentos)      # Se convierte a string para evitar un error de type 
         
     
 class planes_alimenticios(models.Model):
-    plan_fit = models.CharField()
-    plan_normal = models.CharField()
-    plan_vegetariano = models.CharField()
-    plan_vegano = models.CharField()
-    
+    tipo_plan = models.CharField(max_length=30, null=True, blank=True)
+    descripcion_plan = models.CharField(max_length=200, null=True, blank=True)
+    precio_plan = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+
     def __str__(self):
-        return self.plan_fit
+        return self.tipo_plan
 
 class reservas(models.Model):
     usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
@@ -47,7 +45,7 @@ class reservas(models.Model):
     def __str__(self):
         return self.usuario.nombre
 
-
-
+    
+    
     
        
