@@ -18,7 +18,8 @@ from django.views import View
 #Clase creada para que el usuario se loguee correctamente
 class LoginUsuario(LoginView):
         template_name = 'Registration/login.html'
-        next_page = reverse_lazy('')
+        next_page = reverse_lazy('inicio')
+        
         
 #Clase para que el usuario se resgistre por primera vez. 
 class RegistroUsuario(View):
