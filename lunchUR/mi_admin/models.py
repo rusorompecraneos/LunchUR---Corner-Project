@@ -4,7 +4,7 @@ from django.db import models
 class usuarios(models.Model):
     nombre = models.CharField(max_length=60)
     numero_id = models.IntegerField()
-    correo_electronico = models.EmailField(unique=True)
+    correo_electronico = models.EmailField(unique=True, max_length=60)
     contraseña = models.CharField(max_length=10)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     
@@ -24,7 +24,7 @@ class alimentos_menu(models.Model):
     carbohidratos_menu = models.CharField(null=True, blank=True)
     grasas_menu = models.CharField(null=True, blank=True)
     ensaldas_menu = models.CharField(null=True, blank=True)
-    
+
     def __str__(self):
         return str(self.num_alimentos)      # Se convierte a string para evitar un error de type 
         

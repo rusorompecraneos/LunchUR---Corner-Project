@@ -12,13 +12,13 @@ from django.views import View
 
 
 #Vista de prueba para confirmar la funcionalidad
-def mi_vista(request):
-    return HttpResponse("¡Hola, bienvenido a LunchUR! Donde podras gestionar tus almuerzos, cuando quieras y desde cualquier lugar")
+#def mi_vista(request):
+ #   return HttpResponse("¡Hola, bienvenido a LunchUR! Donde podras gestionar tus almuerzos, cuando quieras y desde cualquier lugar")
 
 #Clase creada para que el usuario se loguee correctamente
 class LoginUsuario(LoginView):
         template_name = 'Registration/login.html'
-        next_page = reverse_lazy('home')
+        next_page = reverse_lazy('')
         
 #Clase para que el usuario se resgistre por primera vez. 
 class RegistroUsuario(View):
@@ -41,3 +41,11 @@ class RegistroUsuario(View):
             )
             return redirect('login') 
                   
+
+class inicio(View):
+    template_name = 'Inicio/inicio.html'
+    def get(self, request):
+        return render(request, self.template_name)
+    
+    
+    
