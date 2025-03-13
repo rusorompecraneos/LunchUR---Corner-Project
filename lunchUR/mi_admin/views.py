@@ -8,6 +8,8 @@ from .models import usuarios
 from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas.
 from django.views import View
 
+
+
 # Create your views here.
 
 
@@ -48,5 +50,16 @@ class inicio(View):
     def get(self, request):
         return render(request, self.template_name)
     
+
+
+class Lista_de_precios(View):
+    template_name = 'Inicio/lista_de_precios.html'
+    def get(self, request):
+        return render(request, self.template_name)
+#Clase para que el usuario pueda ver los alimentos disponibles en la app.
+
+    
+    
+
     
     

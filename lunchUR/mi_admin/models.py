@@ -1,11 +1,12 @@
 from django.db import models
 
+
 # Create your models here.
 class usuarios(models.Model):
     nombre = models.CharField(max_length=100)
     numero_id = models.IntegerField()
     correo_electronico = models.EmailField(unique=True, max_length=60)
-    contraseña = models.CharField(max_length=30)
+    contraseña = models.CharField(max_length=255)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

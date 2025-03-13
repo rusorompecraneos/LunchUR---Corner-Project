@@ -1,0 +1,26 @@
+{% extends 'Layouts/base.html'%}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <title>Lista de precios:</title>
+    </head>
+    <body>
+        <h1>Listado de precios</h1>
+        <table>
+            <tr>
+                <th>Plato</th>
+                <th>Precio</th>
+            </tr>
+            {% for plato, precio in precios %}
+            <tr>
+                <td>{{ plato }}</td>
+                <td>{{ precio }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+
+{% endblock %}
