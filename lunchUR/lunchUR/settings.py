@@ -56,7 +56,7 @@ ROOT_URLCONF = 'lunchUR.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'mi_admin/templates/Registration/registro.html'],  # Ajusta según tu estructura
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -7,15 +7,9 @@ from django.urls import reverse_lazy
 from .models import usuarios
 from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas.
 from django.views import View
-
-
+from back_end.registro import RegistroView
 
 # Create your views here.
-
-
-#Vista de prueba para confirmar la funcionalidad
-#def mi_vista(request):
- #   return HttpResponse("¡Hola, bienvenido a LunchUR! Donde podras gestionar tus almuerzos, cuando quieras y desde cualquier lugar")
 
 #Clase creada para que el usuario se loguee correctamente
 class LoginUsuario(LoginView):
@@ -24,26 +18,10 @@ class LoginUsuario(LoginView):
         
         
 #Clase para que el usuario se resgistre por primera vez. 
-class RegistroUsuario(View):
-        template_name = 'registration/registro.html'
-
-        def get(self, request):
-            return render(request, self.template_name)
-
-        def post(self, request):
-            nombre = request.POST.get('nombre')
-            numero_documento = request.POST.get('numero_documento')
-            correo_electronico = request.POST.get('correo_electronico')
-            password = request.POST.get('password')
-
-            usuarios.objects.create(
-                nombre=nombre,
-                numero_id=numero_documento,
-                correo_electronico=correo_electronico,
-                contraseña=make_password(password) #hasheamos la contraseña.
-            )
-            return redirect('login') 
-                  
+registro_view = RegistroView()   #Instancia creada para poder llamar a la clase. 
+def mi_vista_personalizada(request):
+    return RegistroView.as_view()(request) 
+    
 
 class inicio(View):
     template_name = 'Inicio/inicio.html'

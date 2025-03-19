@@ -4,11 +4,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.views import View
 from mi_admin.models import usuarios
+from django.utils.translation import ngettext
+
 
 class RegistroView(View):
     def get(self, request):
         #Muestra el formulario para registrarse
-        return render(request, 'registro.html')
+        return render(request, 'Registration/registro.html')
 
     def post(self, request):
         #va a procesar el formulario de registro con las respectivas validaciones
