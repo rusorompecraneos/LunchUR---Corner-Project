@@ -28,7 +28,7 @@ class RegistroView(View):
 
         #El correo debe ser único
         if User.objects.filter(email=correo_electronico).exists():
-            messages.error(request, "¡El correo ya está registrado!")
+            messages.error(request, "¡El correo ya está registrado! Por favor registra un correo valido")
             return redirect('registro')
 
         #El número de documento debe ser único
@@ -58,3 +58,5 @@ class RegistroView(View):
 
         messages.success(request, "¡Ya estás dentro rosarista! Ahora puedes iniciar sesión.")
         return redirect('login')  #Redirigeal usuario al login
+    
+        
