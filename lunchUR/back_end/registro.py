@@ -17,12 +17,12 @@ class RegistroView(View):
         if request.method == "POST":
             nombre = request.POST.get('nombre').strip()
             apellido = request.POST.get('apellido').strip()
-            numero_documento = request.POST.get('numero_documento').strip()
+            numero_id = request.POST.get('numero_id').strip()
             correo_electronico = request.POST.get('correo').strip()
             contraseña = request.POST.get('password').strip()
 
         #hace parte de la validación, verifica que los campos no estén vacíos
-        if not all([nombre, apellido, numero_documento, correo_electronico, contraseña]):
+        if not all([nombre, apellido, numero_id, correo_electronico, contraseña, numero_id]):
             messages.error(request, "Todos los campos son obligatorios.")
             return redirect('registro')
 
@@ -32,8 +32,8 @@ class RegistroView(View):
             return redirect('registro')
 
         #El número de documento debe ser único
-        if usuarios.objects.filter(numero_documento=numero_documento).exists():
-            messages.error(request, "¡El número de documento ya está registrado!")
+        if usuarios.objects.filter(numero_id=numero_id).exists():
+            messages.error(request, "¡El número de documento ya está registrado! Por favor ingresa uno valido. ")
             return redirect('registro')
 
         #La contraseña debe tener al menos 8 caracteres
@@ -44,7 +44,7 @@ class RegistroView(View):
         #Crear el usuario
         nuevo_usuario = usuarios(
             nombre=nombre,
-            numero_id=numero_documento,
+            numero_id=numero_id,
             correo_electronico=correo_electronico,  # Verifica que el nombre sea EXACTAMENTE igual al modelo
             contraseña=contraseña
         )
@@ -53,10 +53,10 @@ class RegistroView(View):
         #Crear perfil de usuario adicional si es necesario
         usuarios.objects.create(
             user=nuevo_usuario,
-            numero_documento=numero_documento
+            numero_id=numero_id
         )
 
         messages.success(request, "¡Ya estás dentro rosarista! Ahora puedes iniciar sesión.")
         return redirect('login')  #Redirigeal usuario al login
-    
+
         

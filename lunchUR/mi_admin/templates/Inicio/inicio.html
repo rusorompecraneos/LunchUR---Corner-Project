@@ -1,6 +1,8 @@
-{% extends 'Layouts/base.html'%}
+{% extends 'Layouts/base.html' %}
 
-{%block content %}
+{% block content %}
+
+<hr class="my-5">
 
 <h1>Bienvenido a LunchUR</h1>
 
@@ -11,6 +13,8 @@
             si bien funcionan muy bien, hay un garn espacio para las mejoras que podemos implementar. 
         </p>
 
+        <hr class="my-5">
+
     <h2> ¿Como funciona? </h2>
         <p>LunchUR utiliza un sistema de calendarios para organizar los almuerzos. Los usuarios pueden establecer fechas y horarios para cada almuerzo.
             Estudiantes y funcionarios pueden ver el cronograma y seleccionar los alumnos que van a almorzar.
@@ -19,9 +23,99 @@
         <p>LunchUR también proporciona un sistema de gestión de pedidos, para que los profesores puedan preparar las comidas y enviarlas a los alumnos cuando sean necesarios.
             También proporciona un chat para los profesores y funcionarios para que puedan comunicarse y coordinar el cronograma de almuerzos.
         </p>
+    
+        <hr class="my-5">
 
-</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">LunchUR</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/menu">Menú</a></li>
+                <li class="nav-item"><a class="nav-link" href="/reservas">Reservas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pedidos">Pedidos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<hr class="my-5">
+
+<header class="text-center py-5 bg-gradient-primary text-white">
+    <h1 class="display-4 font-weight-bold">LunchUR: Tu Almuerzo Ideal</h1>
+    <p class="lead">Descubre menús personalizados, ahorra tiempo y conecta con tu comunidad universitaria.</p>
+    <a href="/registro" class="btn btn-light btn-lg rounded-pill shadow">¡Únete Ahora!</a>
+</header>
+
+<hr class="my-5">
+
+<section class="container my-5">
+    <h2 class="text-center">Nuestros Platos Destacados</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://source..com/400x300/?lunch" class="card-img-top" alt="Plato 1">
+                <div class="card-body">
+                    <h5 class="card-title">Plato Especial</h5>
+                    <p class="card-text">Delicioso almuerzo balanceado para tu día.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?healthy-food" class="card-img-top" alt="Plato 2">
+                <div class="card-body">
+                    <h5 class="card-title">Menú Saludable</h5>
+                    <p class="card-text">Opciones nutritivas para mantener tu energía.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?gourmet" class="card-img-top" alt="Plato 3">
+                <div class="card-body">
+                    <h5 class="card-title">Opción Gourmet</h5>
+                    <p class="card-text">Sabores únicos con ingredientes frescos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<section class="container my-5">
+    <h2 class="text-center">Testimonios de Usuarios</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <blockquote class="blockquote">
+                <p>"LunchUR ha cambiado mi forma de almorzar en la universidad, ¡todo es más fácil y rápido!"</p>
+                <footer class="blockquote-footer">Juan Pérez</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-6">
+            <blockquote class="blockquote">
+                <p>"Excelente servicio, comida deliciosa y bien organizada."</p>
+                <footer class="blockquote-footer">Ana Gómez</footer>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 LunchUR - Todos los derechos reservados</p>
+    <p>
+        <a href="#" class="text-white mx-2">Facebook</a> |
+        <a href="#" class="text-white mx-2">Instagram</a> |
+        <a href="#" class="text-white mx-2">Twitter</a>
+    </p>
+</footer>
+
 {% endblock %}
-
-
-

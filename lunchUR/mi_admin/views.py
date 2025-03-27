@@ -29,11 +29,11 @@ class inicio(View):
         return render(request, self.template_name)
     
 
-
 class Lista_de_precios(View):
     template_name = 'Inicio/lista_de_precios.html'
     def get(self, request):
         return render(request, self.template_name)
+            
 #Clase para que el usuario pueda ver los alimentos disponibles en la app.
 
     
