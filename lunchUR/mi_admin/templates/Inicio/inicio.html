@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load static %}
+
 <hr class="my-5">
 
 <h1>Bienvenido a LunchUR</h1>
@@ -59,7 +61,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <img src="https://source..com/400x300/?lunch" class="card-img-top" alt="Plato 1">
+                <img src="{% static "imagenes/plato_fittnes.jpeg" %} %}" alt="Plato Fittnes ">
                 <div class="card-body">
                     <h5 class="card-title">Plato Especial</h5>
                     <p class="card-text">Delicioso almuerzo balanceado para tu día.</p>
