@@ -3,6 +3,7 @@ from django.urls import path
 from . import views     
 from .views import LoginUsuario     # Importa el login del html
 from .views import RegistroView  # Importa el registro que se hizo en la vista. 
+from .views import ofertas_del_dia 
 
 
 
@@ -10,7 +11,10 @@ urlpatterns = [
     path('', views.inicio.as_view(), name='inicio'), 
     path('login/', LoginUsuario.as_view(), name='login'),
     path('registro/', RegistroView.as_view(), name='registro'),
-    path('lista_productos', views.Lista_de_precios.as_view(), name='lista_productos')
+    path('lista_productos/', views.Lista_de_precios.as_view(), name='lista_productos'),
+    # path('reservas/' , views.id_reservas.as_view(), name='')  #Hay que modificar esta direccion luego. 
+    path('ofertas/', ofertas_del_dia, name='ofertas'),
+    
 
 ]
 

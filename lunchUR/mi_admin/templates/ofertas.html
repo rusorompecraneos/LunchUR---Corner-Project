@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas del Día</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>🔥 Ofertas del Día 🔥</h2>
+
+        {% if ofertas %}
+            <ul>
+                {% for oferta in ofertas %}
+                    <li>
+                        <h3>{{ oferta.titulo }}</h3>
+                        <p>{{ oferta.descripcion }}</p>
+                        <p><strong>Descuento:</strong> {{ oferta.descuento }}%</p>
+                        <p><em>Válido hasta: {{ oferta.fecha_fin }}</em></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay ofertas activas rosarista, regresa pronto </p>
+        {% endif %}
+    </div>
+</body>
+</html>

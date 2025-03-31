@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 # Create your models here.
@@ -10,9 +11,26 @@ class usuarios(models.Model):
     contraseña = models.CharField(max_length=255)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     
+    
     def __str__(self):
         return self.nombre
 
+#acá se guardan los datos de la oferta
+class Oferta(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    descuento = models.FloatField()  #Descuento en porcentaje 
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+
+    def esta_activa(self): #verifica si la oferta está 
+        """verifica si la oferta está vigente """
+        hoy = timezone.now().date()
+        return self.fecha_inicio <= hoy <= self.fecha_fin
+    
+    def __str__(self):
+        return self.titulo
+    
 class menus(models.Model):
     nombre_menu = models.CharField(max_length=40)
     descripcion = models.CharField(max_length=200)
@@ -48,6 +66,20 @@ class reservas(models.Model):
         return self.usuario.nombre
 
     
+class PerfilUsuario(models.Model):
+    ROLES = [
+        ('cliente', 'Cliente'), #el primer valor es lo que se guarda en la base de datos, el segundo valor es lo que se muestra en los formularios 
+        ('administrativo', 'Administrativo'),
+        ('empleado', 'Empleado'),
+    ]
+    #Relación con el modelo de usuario de Django 
+    User = models.OneToOneField(usuarios, on_delete=models.CASCADE)
+    numero_documento = models.CharField(max_length=20, unique=True) #id para identificar a cada usuario
+    rol = models.CharField(max_length=20, choices=ROLES, default='cliente') #se almacena el rol del usuario
+
+    def __str__(self):
+        return f"{self.user.username} - {self.rol}"
+
     
     
        

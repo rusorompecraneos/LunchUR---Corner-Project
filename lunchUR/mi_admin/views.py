@@ -8,6 +8,7 @@ from .models import usuarios
 from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas.
 from django.views import View
 from back_end.registro import RegistroView
+from back_end.funciones import ofertas_del_dia 
 
 # Create your views here.
 
@@ -34,7 +35,11 @@ class Lista_de_precios(View):
     def get(self, request):
         return render(request, self.template_name)
             
-#Clase para que el usuario pueda ver los alimentos disponibles en la app.
+# Funcion para ver las ofertas del dia. 
+def ofertas_del_dia(request):
+    ofertas = ofertas_del_dia()  # Llama la función del otro archivo
+    return render(request, 'ofertas.html', {'ofertas': ofertas})
+
 
     
     
