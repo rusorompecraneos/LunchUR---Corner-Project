@@ -1,0 +1,17 @@
+{% extends 'Layouts/base.html' %}
+
+{% block content %}
+    <h1>Listado de productos</h1>
+    <table border="1">
+        <tr>
+            <th>Plato</th>
+            <th>Precio</th>
+        </tr>
+        {% for plato, precio in precios %}
+        <tr>
+            <td>{{ plato }}</td>
+            <td>{{ precio }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

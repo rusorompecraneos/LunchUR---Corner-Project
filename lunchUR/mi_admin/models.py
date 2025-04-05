@@ -64,6 +64,15 @@ class reservas(models.Model):
     
     def __str__(self):
         return self.usuario.nombre
+    
+    
+class CanalDeApoyo(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    enlace = models.URLField()
+
+    def __str__(self):
+        return self.nombre
 
     
 class PerfilUsuario(models.Model):

@@ -61,8 +61,8 @@ ROOT_URLCONF = 'lunchUR.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'mi_admin/templates/Registration/registro.html'],  # Ajusta según tu estructura
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # esto si tienes una carpeta global de templates
+        'APP_DIRS': True,  # esto permite buscar en templates dentro de cada app
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

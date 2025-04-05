@@ -9,6 +9,10 @@ from django.contrib.auth.hashers import make_password #importamos la funcion par
 from django.views import View
 from back_end.registro import RegistroView
 from back_end.funciones import ofertas_del_dia 
+from .models import CanalDeApoyo
+from .models import PerfilUsuario
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -23,26 +27,49 @@ registro_view = RegistroView()   #Instancia creada para poder llamar a la clase.
 def mi_vista_personalizada(request):
     return RegistroView.as_view()(request) 
     
-
+#Clase de inicio 
 class inicio(View):
     template_name = 'Inicio/inicio.html'
     def get(self, request):
         return render(request, self.template_name)
-    
 
-class Lista_de_precios(View):
-    template_name = 'Inicio/lista_de_precios.html'
+#Clase creada para visualizar los precios y productos. 
+class Nuestros_productos(View):    
     def get(self, request):
-        return render(request, self.template_name)
+        precios = [
+            ("Ensalada energetica ", "$12.000"),
+            ("Bowl gladiador ", "$15.000"),
+            ("Mega muscle plato ", "$15.000"),
+            ("Hamgurguesa artesanal ", "$14.000"),
+            ("Estofado casero ", "$13.500"),
+            ("Tortilla saludable  ","$12.000"),
+            ("Pasta tradicional ", "$14.500"),
+            ("Menu criollo ", "$14.000"),
+            ("Bolw proteico ", "$16.000"),
+            ("Menu marino ", "$15.800"),
+            ("Clasico casero ", "$13.000"),
+        
+    ]
+        
+        return render(request, 'nuestros_productos.html', {'precios': precios})
             
 # Funcion para ver las ofertas del dia. 
-def ofertas_del_dia(request):
-    ofertas = ofertas_del_dia()  # Llama la función del otro archivo
-    return render(request, 'ofertas.html', {'ofertas': ofertas})
+def ofertas_del_dia(request):  # request es obligatorio como primer argumento
+    return render(request, 'ofertas.html')
 
+# Funcion para visualizar el html de los canales de apoyo. 
+def canales_apoyo(request):
+    canales = CanalDeApoyo.objects.all()
+    return render(request, 'canales_de_apoyo.html', {'canales': canales})
 
     
-    
 
+#Funcion para mostrar el perfil del usuario. 
+#NOTA: DEBE ESTAR EN EL HOMEE EL CUAL ME ENVIARA PAOLA. 
+@login_required #está verificando que esté autenticado
+def perfil_usuario(request): 
+    perfil = PerfilUsuario.objects.get(user=request.user)
+    return render(request, 'perfil.html', {'perfil': perfil})
+#se obtiene el perfil del usuario actual y lo envia a la plantilla
     
     

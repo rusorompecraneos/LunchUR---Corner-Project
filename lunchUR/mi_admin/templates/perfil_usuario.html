@@ -1,0 +1,28 @@
+{% extends 'Layouts/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2> Mi Perfil</h2>
+
+        <p><strong>Nombre:</strong> {{ perfil.user.first_name }} {{ perfil.user.last_name }}</p>
+        <p><strong>Correo:</strong> {{ perfil.user.email }}</p>
+        <p><strong>Número de Documento:</strong> {{ perfil.numero_documento }}</p>
+        <p><strong>Rol:</strong> {{ perfil.get_rol_display }}</p>
+
+        <a href="{% url 'editar_perfil' %}" class="btn btn-primary">Editar Perfil</a>
+    </div>
+</body>
+</html>
+
+{%endblock%}
