@@ -1,0 +1,15 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="fecha_reserva">Selecciona la fecha y hora:</label>
+    <input type="datetime-local" name="fecha_reserva" required>
+    <button type="submit">Reservar</button>
+</form>
+
+<h3>Tus reservas:</h3>
+<ul>
+    {% for reserva in reservas %}
+        <li>{{ reserva.fecha_reserva }}</li>
+    {% empty %}
+        <li>No tienes reservas registradas.</li>
+    {% endfor %}
+</ul>

@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mi_admin',
-    'django.contrib.messages',
     
 
 ]
@@ -57,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
 ROOT_URLCONF = 'lunchUR.urls'

@@ -2,9 +2,7 @@
  #Aqui va el back
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
-from .models import usuarios
 from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas.
 from django.views import View
 from back_end.registro import RegistroView
@@ -12,18 +10,20 @@ from back_end.funciones import ofertas_del_dia
 from .models import CanalDeApoyo
 from .models import PerfilUsuario
 from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from back_end.login import Login_usuario
+from back_end.home import HomeView
+from back_end.reservas import Reservas
 
 
 # Create your views here.
+        
+#Llamamos a la funcion de login. 
+login_view = Login_usuario()   #Instancia creada para poder llamar a la clase. 
+def mi_vista_personalizada(request):
+    return Login_usuario.as_view()(request)         
+        
 
-#Clase creada para que el usuario se loguee correctamente
-class LoginUsuario(LoginView):
-        template_name = 'Registration/login.html'
-        next_page = reverse_lazy('inicio')
-        
-        
 #Clase para que el usuario se resgistre por primera vez. 
 registro_view = RegistroView()   #Instancia creada para poder llamar a la clase. 
 def mi_vista_personalizada(request):
@@ -64,16 +64,11 @@ def canales_apoyo(request):
     canales = CanalDeApoyo.objects.all()
     return render(request, 'canales_de_apoyo.html', {'canales': canales})
 
-#Clase para visualizar la pagina "home".
-class HomeView(LoginRequiredMixin, TemplateView):
-    template_name = "home.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        usuario = self.request.user
-        context['nombre'] = usuario.first_name
-        return context    
-    
+#Instanciamos la clase para visualizar el home
+home_view = HomeView()   #Instancia creada para poder llamar a la clase. 
+def mi_vista_personalizada(request):
+    return HomeView.as_view()(request)         
+        
 
     #Funcion para mostrar el perfil del usuario. 
 @login_required #está verificando que esté autenticado
@@ -81,7 +76,12 @@ def perfil_usuario(request):
     perfil = PerfilUsuario.objects.get(user=request.user)
     return render(request, 'perfil_usuario.html', {'perfil': perfil})
     #se obtiene el perfil del usuario actual y lo envia a la plantilla
-
+    
+    
+# Instancia para llamar a la clase que contiene las reservas. 
+reservas_view = Reservas()  
+def mi_vista_personalizada(request):
+    return Reservas.as_view()(request)          
 
 
     
