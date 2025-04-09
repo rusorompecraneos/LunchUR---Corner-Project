@@ -12,6 +12,8 @@ from back_end.funciones import ofertas_del_dia
 from .models import CanalDeApoyo
 from .models import PerfilUsuario
 from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -62,14 +64,25 @@ def canales_apoyo(request):
     canales = CanalDeApoyo.objects.all()
     return render(request, 'canales_de_apoyo.html', {'canales': canales})
 
+#Clase para visualizar la pagina "home".
+class HomeView(LoginRequiredMixin, TemplateView):
+    template_name = "home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        usuario = self.request.user
+        context['nombre'] = usuario.first_name
+        return context    
     
 
-#Funcion para mostrar el perfil del usuario. 
-#NOTA: DEBE ESTAR EN EL HOMEE EL CUAL ME ENVIARA PAOLA. 
+    #Funcion para mostrar el perfil del usuario. 
 @login_required #está verificando que esté autenticado
 def perfil_usuario(request): 
     perfil = PerfilUsuario.objects.get(user=request.user)
-    return render(request, 'perfil.html', {'perfil': perfil})
-#se obtiene el perfil del usuario actual y lo envia a la plantilla
+    return render(request, 'perfil_usuario.html', {'perfil': perfil})
+    #se obtiene el perfil del usuario actual y lo envia a la plantilla
+
+
+
     
     

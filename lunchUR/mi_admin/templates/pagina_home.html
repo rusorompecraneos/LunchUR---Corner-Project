@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lunch UR - Página principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        a.button {
+            display: block;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        a.button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola, {{ nombre }}! Bienvenido a LunchUR </h1>
+
+        <a href="{% url 'reservas' %}" class="button"> Reservar mi almuerzo</a>
+        <a href="{% url 'perfil' %}" class="button"> Ver mi perfil</a>
+        <a href="{% url 'ofertas' %}" class="button"> Promociones del día</a>
+        <a href="{% url 'canales_apoyo' %}" class="button"> Canales de ayuda</a>
+    </div>
+</body>
+</html>

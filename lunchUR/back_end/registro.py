@@ -27,7 +27,7 @@ class RegistroView(View):
             return redirect('registro')
 
         #El correo debe ser único
-        if User.objects.filter(email=correo_electronico).exists():
+        if usuarios.objects.filter(correo_electronico=correo_electronico).exists():
             messages.error(request, "¡El correo ya está registrado! Por favor registra un correo valido")
             return redirect('registro')
 
@@ -41,20 +41,16 @@ class RegistroView(View):
             messages.error(request, "¡La contraseña debe tener al menos 6 caracteres!")
             return redirect('registro')
 
-        #Crear el usuario
+        # Crear el usuario
         nuevo_usuario = usuarios(
-            nombre=nombre,
-            numero_id=numero_id,
-            correo_electronico=correo_electronico,  # Verifica que el nombre sea EXACTAMENTE igual al modelo
-            contraseña=contraseña
-        )
+        nombre=nombre,
+        apellido=apellido,
+        numero_id=numero_id,
+        correo_electronico=correo_electronico,
+        contraseña=contraseña
+    )
         nuevo_usuario.save()
 
-        #Crear perfil de usuario adicional si es necesario
-        usuarios.objects.create(
-            user=nuevo_usuario,
-            numero_id=numero_id
-        )
 
         messages.success(request, "¡Ya estás dentro rosarista! Ahora puedes iniciar sesión.")
         return redirect('login')  #Redirigeal usuario al login
