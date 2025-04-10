@@ -57,14 +57,6 @@ class planes_alimenticios(models.Model):
     def __str__(self):
         return self.tipo_plan
 
-class reservas(models.Model):
-    usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
-    fecha_reserva = models.DateTimeField(auto_now_add=True)
-    estado = models.CharField(max_length=20)
-    
-    def __str__(self):
-        return self.usuario.nombre
-    
     
 class CanalDeApoyo(models.Model):
     nombre = models.CharField(max_length=100)
@@ -78,6 +70,7 @@ class Reserva(models.Model):
     usuario = models.ForeignKey('usuarios', on_delete=models.CASCADE, related_name='reservas')
     fecha_reserva = models.DateTimeField()
     fecha_creacion = models.DateTimeField(auto_now_add=True)
+    estado = models.CharField(max_length=30)
 
     def __str__(self):
         return f"Reserva de {self.usuario} para {self.fecha_reserva}"
