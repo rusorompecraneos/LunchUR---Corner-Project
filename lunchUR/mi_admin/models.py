@@ -6,7 +6,7 @@ from django.utils import timezone
 class usuarios(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100, default = 'Null')
-    numero_id = models.IntegerField()
+    numero_id = models.IntegerField(unique=True)
     correo_electronico = models.EmailField(unique=True, max_length=60, null=False, blank=False)
     contraseña = models.CharField(max_length=255)
     fecha_registro = models.DateTimeField(auto_now_add=True)
@@ -67,13 +67,19 @@ class CanalDeApoyo(models.Model):
         return self.nombre
     
 class Reserva(models.Model):
-    usuario = models.ForeignKey('usuarios', on_delete=models.CASCADE, related_name='reservas')
+    usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
     fecha_reserva = models.DateTimeField()
-    fecha_creacion = models.DateTimeField(auto_now_add=True)
-    estado = models.CharField(max_length=30)
-
+    estado = models.CharField(max_length=20, choices=[
+        ('PENDIENTE', 'Pendiente'),
+        ('CONFIRMADA', 'Confirmada'),
+        ('CANCELADA', 'Cancelada')
+    ], default='CONFIRMADA')
+    
+    class Meta:
+        verbose_name_plural = "Reservas"
+        
     def __str__(self):
-        return f"Reserva de {self.usuario} para {self.fecha_reserva}"
+        return f"Reserva de {self.usuario.nombre} para {self.fecha_reserva}"
 
     
 class PerfilUsuario(models.Model):

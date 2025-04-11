@@ -20,7 +20,7 @@ urlpatterns = [
     path('ofertas/', ofertas_del_dia, name='ofertas'), 
     path('productos/', Nuestros_productos.as_view(), name='productos'), 
     path('canales_de_apoyo/', canales_apoyo, name='canales_apoyo'),
-    path('perfil/', perfil_usuario, name='perfil'), #DEBE ESTAR EN EL HOME, IMPLEMENTALO. 
+    path('perfil/', perfil_usuario, name='perfil'), 
     path('home/', HomeView.as_view(), name='home'), 
 
 ]   

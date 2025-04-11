@@ -50,6 +50,8 @@ class RegistroView(View):
         contraseña=contraseña
     )
         nuevo_usuario.save()
+        
+        request.session['numero_id'] = nuevo_usuario.numero_id
 
 
         messages.success(request, "¡Ya estás dentro rosarista! Ahora puedes iniciar sesión.")
