@@ -3,14 +3,7 @@ from django.views.generic import TemplateView
 from mi_admin.models import usuarios
 
 class HomeView(TemplateView):
-    template_name = 'home.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        usuario = self.request.user
-        context['nombre'] = usuario.first_name
-        return context   
-    
+    template_name = 'home.html'  
     
     def dispatch(self, request, *args, **kwargs):
         if not request.session.get('usuario_id'):

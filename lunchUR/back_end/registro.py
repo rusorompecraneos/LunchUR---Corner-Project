@@ -51,6 +51,7 @@ class RegistroView(View):
     )
         nuevo_usuario.save()
         
+        
         request.session['numero_id'] = nuevo_usuario.numero_id
 
 

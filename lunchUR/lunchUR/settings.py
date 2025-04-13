@@ -137,4 +137,4 @@ STATIC_FILES_DIRS = [STATIC_DIR, ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Asegura que la sesion expire al cerrar la pagiba web. 
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+########### SESSION_EXPIRE_AT_BROWSER_CLOSE = False

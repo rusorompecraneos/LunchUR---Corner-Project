@@ -22,7 +22,7 @@ urlpatterns = [
     path('canales_de_apoyo/', canales_apoyo, name='canales_apoyo'),
     path('perfil/', perfil_usuario, name='perfil'), 
     path('home/', HomeView.as_view(), name='home'), 
-
+    
 ]   
 
 

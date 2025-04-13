@@ -6,7 +6,7 @@ from django.views import View
 #Clase creada para que el usuario se loguee correctamente
 class Login_usuario(View):
     def get(self, request):
-        #Muestra el formulario para registrarse
+        #Muestra el formulario para loguearse
         return render(request, 'Registration/login.html')
 
     def post(self, request):
@@ -17,6 +17,7 @@ class Login_usuario(View):
         try:
             usuario_encontrado = usuarios.objects.get(correo_electronico=username, contraseña=password, numero_id = id)
             # Guardamos el ID del usuario en la sesión
+            request.session["usuario_id"] = usuario_encontrado.id
             request.session['numero_id'] = usuario_encontrado.numero_id
             request.session['nombre_usuario'] = usuario_encontrado.nombre
             messages.success(request, f"Bienvenido {usuario_encontrado.nombre} 😊")

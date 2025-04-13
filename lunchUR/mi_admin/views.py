@@ -69,14 +69,6 @@ home_view = HomeView()   #Instancia creada para poder llamar a la clase.
 def mi_vista_personalizada(request):
     return HomeView.as_view()(request)         
         
-
-    #Funcion para mostrar el perfil del usuario. 
-@login_required #está verificando que esté autenticado
-def perfil_usuario(request): 
-    perfil = PerfilUsuario.objects.get(user=request.user)
-    return render(request, 'perfil_usuario.html', {'perfil': perfil})
-    #se obtiene el perfil del usuario actual y lo envia a la plantilla
-    
     
 # Instancia para llamar a la clase que contiene las reservas. 
 reservas_view = Reservas()  
@@ -84,5 +76,11 @@ def mi_vista_personalizada(request):
     return Reservas.as_view()(request)          
 
 
+ #Funcion para mostrar el perfil del usuario. 
+@login_required #está verificando que esté autenticado
+def perfil_usuario(request): 
+    perfil = PerfilUsuario.objects.get(user=request.user)
+    return render(request, 'perfil_usuario.html', {'perfil': perfil})
+    #se obtiene el perfil del usuario actual y lo envia a la plantilla
     
     
