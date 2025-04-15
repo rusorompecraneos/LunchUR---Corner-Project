@@ -1,0 +1,32 @@
+{% extends 'Layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Editar Perfil</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="id_nombre">Nombre:</label>
+        <input type="text" name="nombre" id="id_nombre" value="{{ request.user.first_name }}" disabled>
+
+        <label for="id_apellido">Apellido:</label>
+        <input type="text" name="apellido" id="id_apellido" value="{{ request.user.last_name }}" disabled>
+
+        <label for="id_correo">Correo:</label>
+        <input type="email" name="correo" id="id_correo" value="{{ request.user.email }}" disabled>
+
+        {{ form.as_p }}
+
+        {% if perfil.foto %}
+            <img src="{{ perfil.foto.url }}" alt="Foto de perfil" width="150" height="150">
+        {% else %}
+             <p>No has subido una foto de perfil.</p>
+        {% endif %}
+
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+</div>
+{% endblock %}

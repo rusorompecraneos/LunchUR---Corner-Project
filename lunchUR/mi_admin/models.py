@@ -92,6 +92,8 @@ class PerfilUsuario(models.Model):
     User = models.OneToOneField(usuarios, on_delete=models.CASCADE)
     numero_documento = models.CharField(max_length=20, unique=True) #id para identificar a cada usuario
     rol = models.CharField(max_length=20, choices=ROLES, default='cliente') #se almacena el rol del usuario
+    foto = models.ImageField(upload_to='fotos_perfil/', blank=True, null=True)
+
 
     def __str__(self):
         return f"{self.user.username} - {self.rol}"

@@ -15,9 +15,9 @@
     <div class="container">
         <h2> Mi Perfil</h2>
 
-        <p><strong>Nombre:</strong> {{ perfil.user.first_name }} {{ perfil.user.last_name }}</p>
-        <p><strong>Correo:</strong> {{ perfil.user.email }}</p>
-        <p><strong>Número de Documento:</strong> {{ perfil.numero_documento }}</p>
+        <p><strong>Nombre:</strong> {{ perfil.usuarios.nombre }} {{ perfil.usuarios.apellido }}</p>
+        <p><strong>Correo:</strong> {{ perfil.usuarios.correo_electronico }}</p>
+        <p><strong>Número de Documento:</strong> {{ perfil.usuarios.numero_id }}</p>
         <p><strong>Rol:</strong> {{ perfil.get_rol_display }}</p>
 
         <a href="{% url 'editar_perfil' %}" class="btn btn-primary">Editar Perfil</a>

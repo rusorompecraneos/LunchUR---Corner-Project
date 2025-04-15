@@ -9,6 +9,9 @@ from .views import perfil_usuario
 from .views import HomeView
 from .views import Login_usuario
 from .views import Reservas
+from .views import editar_perfil
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -20,10 +23,13 @@ urlpatterns = [
     path('ofertas/', ofertas_del_dia, name='ofertas'), 
     path('productos/', Nuestros_productos.as_view(), name='productos'), 
     path('canales_de_apoyo/', canales_apoyo, name='canales_apoyo'),
-    path('perfil/', perfil_usuario, name='perfil'), 
     path('home/', HomeView.as_view(), name='home'), 
+    path('perfil/', perfil_usuario, name='perfil'), 
+    path('editar_perfil/', editar_perfil, name='editar_perfil'),
     
-]   
+    
+]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 
 

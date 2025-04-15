@@ -138,3 +138,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Asegura que la sesion expire al cerrar la pagiba web. 
 ########### SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Esta línea es para decirle a Django cuál es tu login personalizado:
+LOGIN_URL = '/login/'

@@ -9,11 +9,17 @@ from back_end.registro import RegistroView
 from back_end.funciones import ofertas_del_dia 
 from .models import CanalDeApoyo
 from .models import PerfilUsuario
+from .models import usuarios
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from back_end.login import Login_usuario
 from back_end.home import HomeView
 from back_end.reservas import Reservas
+from back_end.editar_perfil import editar_perfil
+from django.core.exceptions import ObjectDoesNotExist
+from mi_admin.forms import PerfilUsuarioForm
+from django.shortcuts import get_object_or_404
+
 
 
 # Create your views here.
@@ -77,10 +83,32 @@ def mi_vista_personalizada(request):
 
 
  #Funcion para mostrar el perfil del usuario. 
-@login_required #está verificando que esté autenticado
-def perfil_usuario(request): 
-    perfil = PerfilUsuario.objects.get(user=request.user)
-    return render(request, 'perfil_usuario.html', {'perfil': perfil})
-    #se obtiene el perfil del usuario actual y lo envia a la plantilla
+def perfil_usuario(request):
+    numero_id = request.session.get('numero_id')
+
+    if not numero_id:
+        return redirect('login')
+
+    try:
+        usuario = usuarios.objects.get(numero_id=numero_id)
+        perfil = PerfilUsuario.objects.get(User=usuario)
+        return render(request, 'perfil_usuario.html', {'perfil': perfil})
+    except usuarios.DoesNotExist:
+        return redirect('login')
+    except PerfilUsuario.DoesNotExist:
+        return render(request, 'perfil_usuario.html', {'perfil': None})
     
     
+@login_required
+def editar_perfil(request):
+    perfil = get_object_or_404(PerfilUsuario, user=request.user)
+
+    if request.method == 'POST':
+        form = PerfilUsuarioForm(request.POST, request.FILES, instance=perfil)
+        if form.is_valid():
+            form.save()
+            return redirect('perfil')
+    else:
+        form = PerfilUsuarioForm(instance=perfil)
+
+    return render(request, 'editar_perfil.html', {'form': form})
