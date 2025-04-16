@@ -82,7 +82,7 @@ def mi_vista_personalizada(request):
     return Reservas.as_view()(request)          
 
 
- #Funcion para mostrar el perfil del usuario. 
+ #Funcion para mostrar el perfil del usuario. (SE DEJA CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE METERLE EL CCS). 
 def perfil_usuario(request):
     numero_id = request.session.get('numero_id')
 
@@ -91,17 +91,16 @@ def perfil_usuario(request):
 
     try:
         usuario = usuarios.objects.get(numero_id=numero_id)
-        perfil = PerfilUsuario.objects.get(User=usuario)
-        return render(request, 'perfil_usuario.html', {'perfil': perfil})
+        return render(request, 'perfil_usuario.html', {'usuario': usuario})
     except usuarios.DoesNotExist:
         return redirect('login')
-    except PerfilUsuario.DoesNotExist:
-        return render(request, 'perfil_usuario.html', {'perfil': None})
     
     
-@login_required
+
+
+'''@login_required
 def editar_perfil(request):
-    perfil = get_object_or_404(PerfilUsuario, user=request.user)
+    perfil = get_object_or_404(PerfilUsuario, User=request.user)
 
     if request.method == 'POST':
         form = PerfilUsuarioForm(request.POST, request.FILES, instance=perfil)
@@ -111,4 +110,5 @@ def editar_perfil(request):
     else:
         form = PerfilUsuarioForm(instance=perfil)
 
-    return render(request, 'editar_perfil.html', {'form': form})
+    return render(request, 'editar_perfil.html', {'form': form}) '''
+    
