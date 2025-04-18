@@ -1,0 +1,115 @@
+/* static/css/ofertas_del_dia.css */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ofertas-container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.header h1 {
+    color: #8a1538;
+    font-size: 2.2rem;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.subtitulo {
+    color: #555;
+    font-size: 1.1rem;
+    margin-top: -10px;
+}
+
+.ofertas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.oferta {
+    background-color: #ffffff;
+    border-left: 5px solid #8a1538;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.oferta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.oferta h3 {
+    color: #8a1538;
+    margin-bottom: 0.3rem;
+}
+
+.descuento {
+    display: inline-block;
+    background-color: #ffc107;
+    padding: 0.2rem 0.6rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #000;
+    animation: pulse 2s infinite;
+}
+
+.validez {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    animation: fadeInUp 1.2s ease forwards;
+}

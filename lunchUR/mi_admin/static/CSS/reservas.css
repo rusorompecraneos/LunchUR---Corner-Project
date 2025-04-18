@@ -1,0 +1,102 @@
+.reservas-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #4b1e24;
+}
+
+.header-reservas {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-reservas {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+.header-reservas h2 {
+    color: #a01c2f;
+    margin: 0;
+}
+
+.header-reservas p {
+    color: #6e2c2c;
+    font-size: 1.05rem;
+}
+
+.mensajes-reservas {
+    margin-bottom: 1rem;
+}
+
+.mensaje {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.mensaje.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.formulario-reserva {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.formulario-reserva h3 {
+    color: #a01c2f;
+    margin-bottom: 1rem;
+}
+
+.formulario-reserva input[type="datetime-local"] {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-right: 1rem;
+}
+
+.formulario-reserva button {
+    background-color: #a01c2f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-reserva button:hover {
+    background-color: #7b1523;
+}
+
+.mis-reservas {
+    margin-top: 3rem;
+}
+
+.mis-reservas h3 {
+    color: #a01c2f;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.reserva-item {
+    background-color: #f9f5f1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #e9b949;
+    border-radius: 8px;
+}

@@ -1,36 +1,45 @@
 {% extends 'Layouts/base.html' %}
 
+{% load static %}
 {% block content %}
 
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas del Día</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h2>🔥 Ofertas del Día 🔥</h2>
+ <!-- Link para que herede los estilos que definimos en static -->
+<link rel="stylesheet" href="{% static 'css/ofertas_del_dia.css' %}">
 
-        {% if ofertas %}
-            <ul>
-                {% for oferta in ofertas %}
-                    <li>
-                        <h3>{{ oferta.titulo }}</h3>
-                        <p>{{ oferta.descripcion }}</p>
-                        <p><strong>Descuento:</strong> {{ oferta.descuento }}%</p>
-                        <p><em>Válido hasta: {{ oferta.fecha_fin }}</em></p>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No hay ofertas activas rosarista, regresa pronto </p>
-        {% endif %}
+<div class="ofertas-container">
+    <div class="header">
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo institucional" class="logo">
+        <h1>🌟 Ofertas del Día 🌟</h1>
+        <p class="subtitulo">¡Aprovecha las promociones exclusivas para la comunidad Rosarista!</p>
     </div>
-</body>
-</html>
+
+    <div class="ofertas-lista">
+        <!-- Ofertas ficticias -->
+        <div class="oferta">
+            <h3>Combo Universitario</h3>
+            <p>Incluye hamburguesa, papas y bebida por solo <strong>$12.000</strong>.</p>
+            <span class="descuento">¡20% de descuento solo hoy!</span>
+            <p class="validez">Válido hasta: 30 de abril de 2025</p>
+        </div>
+
+        <div class="oferta">
+            <h3>Desayuno Rosarista</h3>
+            <p>Café + pan de bono + fruta a <strong>$6.000</strong>.</p>
+            <span class="descuento">Descuento especial del 15%</span>
+            <p class="validez">Válido hasta: 25 de abril de 2025</p>
+        </div>
+
+        <div class="oferta">
+            <h3>Postres 2x1</h3>
+            <p>Compra un postre y lleva otro completamente gratis.</p>
+            <span class="descuento">¡Solo por hoy!</span>
+            <p class="validez">Válido hasta: 28 de abril de 2025</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Las ofertas están disponibles en la cafetería central del campus. ¡No te las pierdas! 💥</p>
+    </div>
+</div>
 
 {% endblock %}

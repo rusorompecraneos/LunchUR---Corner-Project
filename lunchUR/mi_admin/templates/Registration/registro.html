@@ -3,7 +3,12 @@
 {% block content %}
 {% load static %}
 
+<!-- Añadimos esta opcion para que este archivo here los parametros que definimos en "registro.css" -->
+<link rel="stylesheet" href="{% static 'css/registro.css' %}">
+
 <div class="register-container">
+    <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo institucional">
+
     <h2>Crear Cuenta</h2> 
 
     <!-- Mensajes de error -->
@@ -48,5 +53,4 @@
         <button type="submit">Registrarse</button>
     </form>
 </div>
-
 {% endblock %}

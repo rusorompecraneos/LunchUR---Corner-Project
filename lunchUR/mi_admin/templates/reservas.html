@@ -1,30 +1,45 @@
 {% extends 'Layouts/base.html' %}
+{% load static %}
 {% block content %}
+
+<!-- Añadimos esta opcion para que este archivo herede los parametros que definimos en "reservas.css" -->
+<link rel="stylesheet" href= "{% static 'css/reservas.css' %}">
+
 <div class="reservas-container">
-    {% if reservas %}
-        <div class="mis-reservas">
-            <h2>Mis Reservas</h2>
-            {% for reserva in reservas %}
-                <div class="reserva-item">
-                    <p>Fecha: {{ reserva.fecha_reserva }}</p>
-                    <p>Estado: {{ reserva.estado }}</p>
-                </div>
+    <div class="header-reservas">
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo institucional" class="logo-reservas">
+        <h2>🗓️ Reservas LunchUR</h2>
+        <p>Reserva tu almuerzo con al menos 3 horas de anticipación y hasta con 1 día de antelación.</p>
+    </div>
+
+    {% if messages %}
+        <div class="mensajes-reservas">
+            {% for message in messages %}
+                <div class="mensaje {{ message.tags }}">{{ message }}</div>
             {% endfor %}
         </div>
     {% endif %}
 
-    <form method="POST">
-        {% csrf_token %}
-        <input type="datetime-local" name="fecha_reserva" required>
-        <button type="submit">Reservar</button>
-    </form>
+    <div class="formulario-reserva">
+        <h3>📌 Selecciona fecha y hora</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="datetime-local" name="fecha_reserva" required>
+            <button type="submit">Reservar</button>
+        </form>
+    </div>
 
-    {% if messages %}
-        {% for message in messages %}
-            <div class="message {{ message.tags }}">
-                {{ message }}
-            </div>
-        {% endfor %}
+    {% if reservas %}
+        <div class="mis-reservas">
+            <h3>📋 Mis Reservas</h3>
+            {% for reserva in reservas %}
+                <div class="reserva-item">
+                    <p><strong>📅 Fecha:</strong> {{ reserva.fecha_reserva }}</p>
+                    <p><strong>📌 Estado:</strong> {{ reserva.estado }}</p>
+                </div>
+            {% endfor %}
+        </div>
     {% endif %}
 </div>
+
 {% endblock %}

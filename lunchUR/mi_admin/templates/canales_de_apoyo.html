@@ -1,148 +1,53 @@
 {% extends 'Layouts/base.html' %}
 
 {% block content %}
-
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canales de Apoyo</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-        .canal {
-            display: flex;
-            align-items: center;
-            background: #fff;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .canal img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-        .canal h3 {
-            margin: 0;
-            color: #222;
-        }
-        .canal p {
-            margin: 5px 0;
-            color: #555;
-        }
-        .canal a {
-            display: inline-block;
-            margin-top: 5px;
-            padding: 8px 12px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .canal a:hover {
-            background: #0056b3;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .cta p {
-            font-size: 1.1em;
-            color: #444;
-        }
-        .cta a {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-        }
-        .cta a:hover {
-            background: #218838;
-        }
-        .contacto {
-            margin-top: 30px;
-            padding: 20px;
-            background: #333;
-            color: white;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .contacto p {
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>📢 Canales de Apoyo</h2>
-        <p>Encuentra aquí recursos y contactos que pueden ayudarte en distintas áreas.</p>
 
-        <ul style="list-style: none; padding: 0;">
-            <li class="canal">
-                <img src="{% static 'imagenes/apoyo1.png' %}" alt="NutriFit">
-                <div>
-                    <h3>🍏 NutriFit</h3>
-                    <p>Asesoría nutricional para atletas y estudiantes. Consejos de dietas saludables.</p>
-                    <a href="https://nutrifit.com" target="_blank">Acceder</a>
-                </div>
-            </li>
-            <li class="canal">
-                <img src="{% static 'imagenes/apoyo2.png' %}" alt="GymBro">
-                <div>
-                    <h3>💪 GymBro</h3>
-                    <p>Rutinas de entrenamiento y comunidad fitness para mejorar tu rendimiento.</p>
-                    <a href="https://gymbro.com" target="_blank">Acceder</a>
-                </div>
-            </li>
-            <li class="canal">
-                <img src="{% static 'imagenes/apoyo3.png' %}" alt="BienestarU">
-                <div>
-                    <h3>🧘 BienestarU</h3>
-                    <p>Plataforma de bienestar y salud mental para estudiantes y deportistas.</p>
-                    <a href="https://bienestaru.com" target="_blank">Acceder</a>
-                </div>
-            </li>
-        </ul>
+<!-- Añadimos esta opcion para que este archivo herede los parametros que definimos en "canales_de_apoyo.css" -->
+<link rel="stylesheet" href="{% static 'css/canales_de_apoyo.css' %}">
 
-        <div class="cta">
-            <p>¿Conoces algún canal de apoyo útil? ¡Compártelo con nosotros!</p>
-            <a href="#">Sugerir un canal</a>
+<div class="apoyo-container">
+    <div class="header-apoyo">
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo institucional" class="logo-apoyo">
+        <h2>📢 Canales de Apoyo Rosarista</h2>
+        <p class="intro-text">Explora herramientas, recursos y contactos para potenciar tu bienestar físico, mental y académico.</p>
+    </div>
+
+    <div class="canales-lista">
+        <div class="canal-card">
+            <img src="{% static 'imagenes/apoyo1.png' %}" alt="NutriFit">
+            <h3>🍏 NutriFit</h3>
+            <p>Asesoría nutricional especializada en deportistas. Aprende a alimentarte como un pro.</p>
+            <a href="https://nutrifit.com" target="_blank">Acceder</a>
         </div>
 
-        <div class="contacto">
-            <h3>📞 CONTACTE CON LOS CREADORES DE LUNCHUR</h3>
-            <p>📌 Información General: <strong>3128991399</strong></p>
-            <p>🔧 Hardware: <strong>3185927261</strong></p>
-            <p>💻 Software: <strong>3160993798</strong>, <strong>3243040618</strong></p>
+        <div class="canal-card">
+            <img src="{% static 'imagenes/apoyo2.png' %}" alt="GymBro">
+            <h3>💪 GymBro</h3>
+            <p>Encuentra rutinas de entrenamiento y consejos fitness. ¡Forma parte de una comunidad activa!</p>
+            <a href="https://gymbro.com" target="_blank">Acceder</a>
+        </div>
+
+        <div class="canal-card">
+            <img src="{% static 'imagenes/apoyo3.png' %}" alt="BienestarU">
+            <h3>🧘 BienestarU</h3>
+            <p>Espacio de salud mental, relajación y orientación emocional para estudiantes rosaristas.</p>
+            <a href="https://bienestaru.com" target="_blank">Acceder</a>
         </div>
     </div>
-</body>
-</html>
 
-{%endblock%}
+    <div class="cta-apoyo">
+        <p>¿Conoces otro canal útil para tus compañeros? ¡Hazlo visible!</p>
+        <a href="#">Sugerir un canal</a>
+    </div>
+
+    <div class="contacto-apoyo">
+        <h3>📞 Contacto LunchUR</h3>
+        <p>Información general: <strong>3128991399</strong></p>
+        <p>Soporte Hardware: <strong>3185927261</strong></p>
+        <p>Soporte Software: <strong>3160993798</strong> / <strong>3243040618</strong></p>
+    </div>
+</div>
+
+{% endblock %}
+

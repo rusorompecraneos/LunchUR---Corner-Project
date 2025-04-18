@@ -21,8 +21,6 @@ from mi_admin.forms import PerfilUsuarioForm
 from django.shortcuts import get_object_or_404
 
 
-
-# Create your views here.
         
 #Llamamos a la funcion de login. 
 login_view = Login_usuario()   #Instancia creada para poder llamar a la clase. 
