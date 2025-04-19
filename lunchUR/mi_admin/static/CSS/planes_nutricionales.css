@@ -1,0 +1,84 @@
+body {
+    background: #f5f8ff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contenedor-formulario {
+    background-color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.contenedor-formulario input,
+.contenedor-formulario select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.contenedor-formulario button {
+    width: 100%;
+    padding: 12px;
+    background-color: #730217;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contenedor-formulario button:hover {
+    background-color: #730217;
+}
+
+.titulo-objetivo {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 26px;
+    color: #730217;
+    animation: slideUp 1s ease-in-out;
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    margin: 2rem;
+}
+
+.tarjeta-dia {
+    background: white;
+    border-left: 6px solid #730217;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.tarjeta-dia h3 {
+    margin-top: 0;
+    color: #730217;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(30px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}

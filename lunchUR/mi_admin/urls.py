@@ -10,7 +10,7 @@ from .views import HomeView
 from .views import Login_usuario
 from .views import Reservas
 from .views import editar_perfil
-from .views import CrearPlan
+from .views import PlanNutricional
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,7 +27,7 @@ urlpatterns = [
     path('home/', HomeView.as_view(), name='home'), 
     path('perfil/', perfil_usuario, name='perfil'), 
     path('editar_perfil/', editar_perfil, name='editar_perfil'),
-    path("crear_plan/", CrearPlan.as_view(), name="crear_plan"),
+    path("crear_plan/", PlanNutricional.as_view(), name="crear_plan"),
     
     
 ]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

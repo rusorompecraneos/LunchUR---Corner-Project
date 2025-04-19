@@ -15,7 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from back_end.login import Login_usuario
 from back_end.home import HomeView
 from back_end.reservas import Reservas
-from back_end.plan import CrearPlan
+from back_end.plan import PlanNutricional
 from back_end.editar_perfil import editar_perfil
 from django.core.exceptions import ObjectDoesNotExist
 from mi_admin.forms import PerfilUsuarioForm
@@ -113,6 +113,6 @@ def editar_perfil(request):
     
 #Instanciamos para poder ver el plan de alimentos. 
 
-planes_alimentacion_view = CrearPlan()  
+planes_alimentacion_view = PlanNutricional()  
 def mi_vista_personalizada(request):
-    return CrearPlan.as_view()(request)
+    return PlanNutricional.as_view()(request)
