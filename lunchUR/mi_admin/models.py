@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
+
 # Create your models here.
 class usuarios(models.Model):
     nombre = models.CharField(max_length=100)
@@ -69,6 +70,7 @@ class CanalDeApoyo(models.Model):
 class Reserva(models.Model):
     usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
     fecha_reserva = models.DateTimeField()
+    menu = models.ForeignKey(menus, on_delete=models.CASCADE, null = False)  
     estado = models.CharField(max_length=20, choices=[
         ('PENDIENTE', 'Pendiente'),
         ('CONFIRMADA', 'Confirmada'),
@@ -98,6 +100,20 @@ class PerfilUsuario(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.rol}"
 
+
+class PlanAlimenticio(models.Model):
+    usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
+    peso = models.FloatField()
+    estatura = models.FloatField()
+    edad = models.IntegerField()
+    actividad_fisica = models.CharField(max_length=50, choices=[
+        ('sedentario', 'Sedentario'),
+        ('ligero', 'Ligero'),
+        ('moderado', 'Moderado'),
+        ('intenso', 'Intenso'),
+    ])
+    objetivo = models.CharField(max_length=50)  # subir, bajar, mantener
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
     
     
        

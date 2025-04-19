@@ -1,45 +1,48 @@
 {% extends 'Layouts/base.html' %}
-{% load static %}
 {% block content %}
+{% load static %}
 
-<!-- Añadimos esta opcion para que este archivo herede los parametros que definimos en "reservas.css" -->
-<link rel="stylesheet" href= "{% static 'css/reservas.css' %}">
+<link rel="stylesheet" href="{% static 'css/reservas.css' %}">
 
-<div class="reservas-container">
-    <div class="header-reservas">
-        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo institucional" class="logo-reservas">
-        <h2>🗓️ Reservas LunchUR</h2>
-        <p>Reserva tu almuerzo con al menos 3 horas de anticipación y hasta con 1 día de antelación.</p>
-    </div>
+<div class="reservas-container animate__animated animate__fadeIn">
+    <h2 class="titulo">🍽️ Reserva tu Menú</h2>
 
     {% if messages %}
-        <div class="mensajes-reservas">
+        <div class="messages">
             {% for message in messages %}
-                <div class="mensaje {{ message.tags }}">{{ message }}</div>
+                <div class="alert {{ message.tags }}">
+                    {{ message }}
+                </div>
             {% endfor %}
         </div>
     {% endif %}
 
-    <div class="formulario-reserva">
-        <h3>📌 Selecciona fecha y hora</h3>
-        <form method="POST">
-            {% csrf_token %}
-            <input type="datetime-local" name="fecha_reserva" required>
-            <button type="submit">Reservar</button>
-        </form>
-    </div>
+    <form method="POST" class="formulario-reserva">
+        {% csrf_token %}
+        <label for="fecha_reserva">Selecciona la fecha y hora:</label>
+        <input type="datetime-local" name="fecha_reserva" required>
+        
+        <label for="menu">Elige tu plato:</label>
+        <select name="menu" id="menu" required>
+            {% for item in menus %}
+                <option value="{{ item.id }}">{{ item.nombre }} - {{ item.descripcion }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="btn-reservar">Reservar</button>
+    </form>
 
     {% if reservas %}
         <div class="mis-reservas">
-            <h3>📋 Mis Reservas</h3>
+            <h3>📝 Mis Reservas</h3>
             {% for reserva in reservas %}
-                <div class="reserva-item">
-                    <p><strong>📅 Fecha:</strong> {{ reserva.fecha_reserva }}</p>
-                    <p><strong>📌 Estado:</strong> {{ reserva.estado }}</p>
+                <div class="reserva-item animate__animated animate__fadeInUp">
+                    <p><strong>Fecha:</strong> {{ reserva.fecha_reserva }}</p>
+                    <p><strong>Estado:</strong> {{ reserva.estado }}</p>
+                    <p><strong>Menú:</strong> {{ reserva.menu.nombre }} - {{ reserva.menu.descripcion }}</p>
                 </div>
             {% endfor %}
         </div>
     {% endif %}
 </div>
-
 {% endblock %}

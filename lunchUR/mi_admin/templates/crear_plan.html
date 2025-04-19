@@ -1,0 +1,42 @@
+{% extends 'Layouts/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/crear_plan.css' %}">
+
+<div class="plan-container">
+    <h2>Crear tu Plan Alimenticio</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="peso">Peso (kg):</label>
+        <input type="number" step="0.1" name="peso" required>
+
+        <label for="estatura">Estatura (cm):</label>
+        <input type="number" step="0.1" name="estatura" required>
+
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" required>
+
+        <label for="actividad">Nivel de actividad física:</label>
+        <select name="actividad" required>
+            <option value="sedentario">Sedentario</option>
+            <option value="ligero">Ligero</option>
+            <option value="moderado">Moderado</option>
+            <option value="intenso">Intenso</option>
+        </select>
+
+        <button type="submit">Generar Plan</button>
+    </form>
+
+    {% if plan %}
+        <div class="resultado">
+            <h3>Tu Plan Nutricional (Objetivo: {{ plan.objetivo }})</h3>
+            <ul>
+                {% for dia in plan.semanal %}
+                    <li><strong>{{ dia.dia }}:</strong> {{ dia.comida }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

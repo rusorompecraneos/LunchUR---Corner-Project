@@ -15,6 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from back_end.login import Login_usuario
 from back_end.home import HomeView
 from back_end.reservas import Reservas
+from back_end.plan import CrearPlan
 from back_end.editar_perfil import editar_perfil
 from django.core.exceptions import ObjectDoesNotExist
 from mi_admin.forms import PerfilUsuarioForm
@@ -77,7 +78,7 @@ def mi_vista_personalizada(request):
 # Instancia para llamar a la clase que contiene las reservas. 
 reservas_view = Reservas()  
 def mi_vista_personalizada(request):
-    return Reservas.as_view()(request)          
+    return Reservas.as_view()(request)
 
 
  #Funcion para mostrar el perfil del usuario. (SE DEJA CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE METERLE EL CCS). 
@@ -110,3 +111,8 @@ def editar_perfil(request):
 
     return render(request, 'editar_perfil.html', {'form': form}) '''
     
+#Instanciamos para poder ver el plan de alimentos. 
+
+planes_alimentacion_view = CrearPlan()  
+def mi_vista_personalizada(request):
+    return CrearPlan.as_view()(request)
