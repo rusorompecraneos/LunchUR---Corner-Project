@@ -1,17 +1,33 @@
-{% extends 'Layouts/base_home.html' %}
+{% extends 'Layouts/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Listado de productos</h1>
-    <table border="1">
-        <tr>
-            <th>Plato</th>
-            <th>Precio</th>
-        </tr>
-        {% for plato, precio in precios %}
-        <tr>
-            <td>{{ plato }}</td>
-            <td>{{ precio }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestros Productos</title>
+    <link rel="stylesheet" href="{% static 'css/nuestros_productos.css' %}">
+</head>
+<body>
+    <!-- contenedor principal  -->
+    <div class="productos-container">
+        <h1>Nuestros Productos</h1>
+
+        <!-- tabla para mostrar platos y precios -->
+        <table>
+            <tr>
+                <th>Plato</th>
+                <th>Precio</th>
+            </tr>
+            {% for plato, precio in precios %}
+            <tr>
+                <td>{{ plato }}</td>
+                <td>{{ precio }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
 {% endblock %}

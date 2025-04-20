@@ -1,0 +1,105 @@
+/* static/css/login.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #990000 20%, #ffffff 100%);
+    padding: 20px;
+}
+
+.login-container {
+    max-width: 450px;
+    background-color: white;
+    padding: 40px 80px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-top: 10px solid #990000;
+    text-align: center;
+    position: relative;
+}
+
+.login-container img.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.login-container h2 {
+    color: #990000;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: #990000;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(153, 0, 0, 0.2);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background-color: #990000;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #7a0000;
+    transform: scale(1.02);
+}
+
+.messages {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 0;
+    list-style: none;
+}
+
+.messages li {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-error, .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}

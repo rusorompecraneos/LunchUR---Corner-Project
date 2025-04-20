@@ -1,59 +1,41 @@
 {% extends 'Layouts/base_home.html' %}
+{% load static %}
 
 {% block content %}
-<!-- {% load static %} -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Lunch UR - Página principal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            max-width: 600px;
-            margin: auto;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        a.button {
-            display: block;
-            background-color: #3498db;
-            color: white;
-            padding: 15px;
-            margin: 15px 0;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-        a.button:hover {
-            background-color: #2980b9;
-        }
-
-    </style>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>¡Hola, {{ nombre }}! Bienvenido a LunchUR </h1>
+    <div class="home-container">
 
-        <a href="{% url 'reservas' %}" class="button"> Reservar mi almuerzo</a>
-        <a href="{% url 'perfil' %}" class="button"> Ver mi perfil</a>
-        <a href="{% url 'ofertas' %}" class="button"> Promociones del día</a>
-        <a href="{% url 'canales_apoyo' %}" class="button"> Canales de apoyo</a>
-        <a href="{% url 'login' %}" class="button"> Cerrar sesion </a>
-        <a href="{% url 'crear_plan' %}">Crear Plan Alimenticio</a>
+        <!-- Hero section con bienvenida -->
+        <div class="hero-section">
+            <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo Universidad del Rosario" class="hero-logo">
+            <h1>¡Hola, {{ nombre }}! Bienvenido a <span class="resaltado">LunchUR</span> 🍽️</h1>
+            <p class="subtitulo">Tu portal para reservar almuerzos, consultar promociones y crear planes alimenticios personalizados.</p>
+        </div>
+
+        <!-- Sección con botones -->
+        <div class="acciones-container">
+            <a href="{% url 'reservas' %}" class="home-button">🍛 Reservar mi almuerzo</a>
+            <a href="{% url 'perfil' %}" class="home-button">👤 Ver mi perfil</a>
+            <a href="{% url 'ofertas' %}" class="home-button">💸 Promociones del día</a>
+            <a href="{% url 'canales_apoyo' %}" class="home-button">📞 Canales de apoyo</a>
+            <a href="{% url 'crear_plan' %}" class="home-button">🥗 Crear Plan Alimenticio</a>
+            <a href="{% url 'login' %}" class="home-button cerrar-sesion">🚪 Cerrar sesión</a>
+        </div>
+
+        <!-- Imagen decorativa -->
+        <div class="img-banner">
+            <img src="{% static 'imagenes/almuerzo_saludable.jpeg' %}" alt="Almuerzo saludable">
+        </div>
+
     </div>
 </body>
 </html>
+{% endblock %}
 
-{% endblock%}
