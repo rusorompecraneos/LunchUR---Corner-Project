@@ -4,9 +4,10 @@ from mi_admin.models import usuarios, Reserva, menus
 from django.views import View
 from django.utils import timezone
 from datetime import timedelta
+import random
 
 
-class Reservas(View):
+class Reservas_Almuerzos(View):
     def get(self, request):
         numero_id = request.session.get("numero_id")
         if not numero_id:
@@ -21,6 +22,9 @@ class Reservas(View):
 
         reservas = Reserva.objects.filter(usuario=usuario).order_by('-fecha_reserva')
         menus_disponibles = menus.objects.all()
+        
+        
+        
 
         messages.success(request, "Bienvenido a tus reservas 😊")
         messages.info(request, "Aquí podrás ver y hacer tus reservas.")
@@ -72,11 +76,16 @@ class Reservas(View):
 
             menu = menus.objects.get(id=menu_id)
 
+            
+            # AQUI VAMOS AGREGAR LA ALETORIDAD DEL NUMERO:
+            numero_reserva = random.randint(0, 99)
+            
             nueva_reserva = Reserva(
                 usuario=usuario,
                 fecha_reserva=fecha_reserva_dt,
                 menu=menu,
-                estado='CONFIRMADA'
+                estado='CONFIRMADA',
+                numero_aleatorio=numero_reserva
             )
             nueva_reserva.save()
 

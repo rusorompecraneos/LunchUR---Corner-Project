@@ -17,7 +17,7 @@ class Login_usuario(View):
         try:
             usuario_encontrado = usuarios.objects.get(correo_electronico=username, contraseña=password, numero_id = id)
             # Guardamos el ID del usuario en la sesión
-            request.session["usuario_id"] = usuario_encontrado.id
+            request.session["usuario_id"] = usuario_encontrado.id  # donde `usuario` es tu instancia del modelo usuarios
             request.session['numero_id'] = usuario_encontrado.numero_id
             request.session['nombre_usuario'] = usuario_encontrado.nombre
             messages.success(request, f"Bienvenido {usuario_encontrado.nombre} 😊")

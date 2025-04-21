@@ -70,7 +70,8 @@ class CanalDeApoyo(models.Model):
 class Reserva(models.Model):
     usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
     fecha_reserva = models.DateTimeField()
-    menu = models.ForeignKey(menus, on_delete=models.CASCADE, null = False)  
+    menu = models.ForeignKey(menus, on_delete=models.CASCADE, null = False)
+    numero_aleatorio = models.IntegerField(default=0)  
     estado = models.CharField(max_length=20, choices=[
         ('PENDIENTE', 'Pendiente'),
         ('CONFIRMADA', 'Confirmada'),
@@ -115,5 +116,22 @@ class PlanAlimenticio(models.Model):
     objetivo = models.CharField(max_length=50)  # subir, bajar, mantener
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion_corta = models.CharField(max_length=255)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
     
-       
+    def __str__(self):
+        return self.nombre
+
+
+class Compra(models.Model):
+    usuario = models.ForeignKey(usuarios, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+    fecha_compra = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Compra de {self.usuario.username} - {self.fecha_compra.strftime('%Y-%m-%d')}"

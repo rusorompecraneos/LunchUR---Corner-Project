@@ -1,0 +1,204 @@
+/* Colores principales */
+:root {
+    --vino-tinto: #730217;
+    --gris-claro: #F5F5F5;
+    --gris-medio: #E0E0E0;
+    --gris-oscuro: #808080;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--negro);
+    line-height: 1.6;
+    background-color: var(--gris-claro);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--vino-tinto), #6B0000);
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+    animation: fadeInDown 1s ease-out;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    color: var(--blanco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    color: var(--blanco);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
+/* Tarjetas flotantes para información */
+.info-card {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(139, 0, 0, 0.15);
+}
+
+.info-card h2 {
+    color: var(--vino-tinto);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gris-medio);
+    padding-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: var(--gris-oscuro);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Sección de platos */
+.platos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--gris-claro);
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.card {
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: var(--vino-tinto);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card-description {
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+}
+
+/* Testimonios */
+.testimonial-card {
+    background: var(--blanco);
+    border-left: 5px solid var(--vino-tinto);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card blockquote {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card blockquote::before {
+    content: "\"";
+    font-size: 4rem;
+    color: var(--vino-tinto);
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    opacity: 0.3;
+}
+
+.testimonial-card footer {
+    color: var(--gris-oscuro);
+    font-style: italic;
+    text-align: right;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .platos-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+}

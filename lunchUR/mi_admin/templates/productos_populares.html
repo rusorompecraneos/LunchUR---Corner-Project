@@ -1,0 +1,24 @@
+{% extends 'Layouts/base.html' %}
+{%load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/productos_populares.css' %}">
+
+    <div class="productos-populares-container">
+        <h1>Productos Populares</h1>
+        <p class="descripcion">¡Descubre los productos más vendidos!</p>
+
+        <div class="productos-lista">
+            {% for producto in productos_populares %}
+                <div class="producto">
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="producto-imagen">
+                    <h3>{{ producto.nombre }}</h3>
+                    <p class="descripcion-corta">{{ producto.descripcion_corta }}</p>
+                    <strong>${{ producto.precio }}</strong>
+                    <a href="{% url 'ver_producto' producto.id %}" class="btn-ver">Ver más</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

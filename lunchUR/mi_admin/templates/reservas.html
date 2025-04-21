@@ -33,16 +33,18 @@
     </form>
 
     {% if reservas %}
-        <div class="mis-reservas">
-            <h3>📝 Mis Reservas</h3>
-            {% for reserva in reservas %}
-                <div class="reserva-item animate__animated animate__fadeInUp">
-                    <p><strong>Fecha:</strong> {{ reserva.fecha_reserva }}</p>
-                    <p><strong>Estado:</strong> {{ reserva.estado }}</p>
-                    <p><strong>Menú:</strong> {{ reserva.menu.nombre }} - {{ reserva.menu.descripcion }}</p>
-                </div>
-            {% endfor %}
+    <div class="mis-reservas">
+        <h3>📝 Mis Reservas</h3>
+        {% for reserva in reservas %}
+        <div class="reserva-item animate__animated animate__fadeInUp">
+            <p><strong>Fecha:</strong> {{ reserva.fecha_reserva }}</p>
+            <p><strong>Estado:</strong> {{ reserva.estado }}</p>
+            <p><strong>Menú:</strong> {{ reserva.menu.nombre }} - {{ reserva.menu.descripcion }}</p>
+            <p><strong>Número de Reserva:</strong> #{{ reserva.numero_aleatorio }}</p>
         </div>
+        {% endfor %}
+    </div>
     {% endif %}
 </div>
+
 {% endblock %}

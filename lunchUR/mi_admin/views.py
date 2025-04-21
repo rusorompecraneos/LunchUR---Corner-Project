@@ -14,8 +14,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from back_end.login import Login_usuario
 from back_end.home import HomeView
-from back_end.reservas import Reservas
+from back_end.reservas import Reservas_Almuerzos
 from back_end.plan import PlanNutricional
+from back_end.productos_populares import Productos_populares
+from back_end.historial_de_compras import Historial_de_compras
 from back_end.editar_perfil import editar_perfil
 from django.core.exceptions import ObjectDoesNotExist
 from mi_admin.forms import PerfilUsuarioForm
@@ -76,9 +78,9 @@ def mi_vista_personalizada(request):
         
     
 # Instancia para llamar a la clase que contiene las reservas. 
-reservas_view = Reservas()  
+reservas_view = Reservas_Almuerzos()  
 def mi_vista_personalizada(request):
-    return Reservas.as_view()(request)
+    return Reservas_Almuerzos.as_view()(request)
 
 
  #Funcion para mostrar el perfil del usuario. (SE DEJA CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE METERLE EL CCS). 
@@ -116,3 +118,17 @@ def editar_perfil(request):
 planes_alimentacion_view = PlanNutricional()  
 def mi_vista_personalizada(request):
     return PlanNutricional.as_view()(request)
+
+#############3
+productos_populares_view = Productos_populares()  
+def mi_vista_personalizada(request):
+    return Productos_populares.as_view()(request)
+
+
+#############
+historial_de_compras_s_view = Historial_de_compras()  
+def mi_vista_personalizada(request):
+    return Historial_de_compras.as_view()(request)
+
+
+
