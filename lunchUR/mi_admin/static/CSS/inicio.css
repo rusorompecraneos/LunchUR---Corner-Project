@@ -16,12 +16,12 @@
     max-width: 600px;
     width: 100%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 3px solid #7a003c;
+    border: 3px solid #730217;
 }
 
 .hero-title {
     font-size: 2.5rem;
-    color: #7a003c;
+    color: #730217;
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -40,7 +40,7 @@
 }
 
 .hero-button {
-    background-color: #7a003c;
+    background-color: #730217;
     color: white;
     padding: 12px 25px;
     text-decoration: none;
@@ -50,13 +50,13 @@
 }
 
 .hero-button:hover {
-    background-color: #a5004e;
+    background-color: #730217;
 }
 
 
 /* Info en tarjetas */
 .seccion-titulo {
-    color: #7a003c;
+    color: #730217;
     margin-bottom: 30px;
     font-weight: bold;
     justify-content: center;
@@ -73,7 +73,7 @@
 
 .tarjeta-plato {
     background: #ffffff;
-    border: 2px solid #7a003c;
+    border: 2px solid #730217;
     border-radius: 15px;
     width: 250px;
     padding: 20px;
@@ -94,7 +94,7 @@
 }
 
 .titulo-plato {
-    color: #7a003c;
+    color: #730217;
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: bold;
@@ -130,7 +130,7 @@
 
 .titulo-testimonios {
     font-size: 2.2rem;
-    color: #7a003c;
+    color: #730217;
     margin-bottom: 40px;
     font-weight: bold;
 }
@@ -144,7 +144,7 @@
 
 .testimonio-card {
     background-color: white;
-    border: 2px solid #7a003c;
+    border: 2px solid #730217;
     border-radius: 15px;
     padding: 30px;
     max-width: 350px;
@@ -169,10 +169,10 @@
 }
 
 
-/*Modificaciones del footer: */
+/* Footer: */
 
 .footer-custom {
-    background-color: #7A003C; /* Vino institucional */
+    background-color: #730217; /* Vino institucional */
     color: #fff;
     padding: 30px 0;
     margin-top: 40px;
