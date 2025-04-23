@@ -2,40 +2,50 @@
 {% load static %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lunch UR - Página principal</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-</head>
-<body>
-    <div class="home-container">
 
-        <!-- Hero section con bienvenida -->
-        <div class="hero-section">
-            <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo Universidad del Rosario" class="hero-logo">
-            <h1>¡Hola, {{ nombre }}! Bienvenido a <span class="resaltado">LunchUR</span> 🍽️</h1>
-            <p class="subtitulo">Tu portal para reservar almuerzos, consultar promociones y crear planes alimenticios personalizados.</p>
-        </div>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 
-        <!-- Sección con botones -->
-        <div class="acciones-container">
-            <a href="{% url 'reservas' %}" class="home-button">🍛 Reservar mi almuerzo</a>
-            <a href="{% url 'perfil' %}" class="home-button">👤 Ver mi perfil</a>
-            <a href="{% url 'ofertas' %}" class="home-button">💸 Promociones del día</a>
-            <a href="{% url 'canales_apoyo' %}" class="home-button">📞 Canales de apoyo</a>
-            <a href="{% url 'crear_plan' %}" class="home-button">🥗 Crear Plan Alimenticio</a>
-            <a href="{% url 'login' %}" class="home-button cerrar-sesion">🚪 Cerrar sesión</a>
-        </div>
+<div class="home-container">
 
-        <!-- Imagen decorativa -->
-        <div class="img-banner">
-            <img src="{% static 'imagenes/almuerzo_saludable.jpeg' %}" alt="Almuerzo saludable">
-        </div>
-
+    <!-- Hero: Bienvenida -->
+    <div class="hero-section">
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo Universidad del Rosario" class="hero-logo">
+        <h1>¡Hola, {{ nombre }}! Bienvenido a <span class="resaltado">LunchUR</span> 🍽️</h1>
+        <p class="subtitulo">Tu portal para reservar almuerzos, consultar promociones y crear planes alimenticios personalizados.</p>
     </div>
-</body>
-</html>
-{% endblock %}
 
+    <!-- Descripción cálida -->
+    <div class="descripcion-lunchur">
+        <h2>¿Qué es LunchUR?</h2>
+        <p>LunchUR es tu compañero ideal para mejorar tu experiencia alimenticia dentro de la Universidad del Rosario. 
+        Descubre menús personalizados, consulta promociones del día y organiza tus planes alimenticios con facilidad. 
+        Todo desde un solo lugar, hecho especialmente para ti como parte de nuestra comunidad.</p>
+    </div>
+
+    <!-- Sección alimentación saludable -->
+    <div class="alimentacion-saludable">
+        <h2>🥦 Alimentación Saludable</h2>
+        <p>Creemos en una alimentación nutritiva, balanceada y deliciosa. Con LunchUR puedes planificar tus comidas, 
+        asegurarte de que estés recibiendo los nutrientes adecuados para tu ritmo de vida universitario y ahorrar tiempo en tu día a día.</p>
+    </div>
+
+    <!-- Acciones principales -->
+    <div class="acciones-container">
+        <a href="{% url 'historial_de_compras' %}" class="home-button">📜 Historial de compras</a>
+        <a href="{% url 'ofertas' %}" class="home-button">💸 Promociones del día</a>
+    </div>
+
+    <!-- Imágenes decorativas -->
+    <div class="imagenes-decorativas">
+        <div class="img-box">
+            <img src="{% static 'imagenes/mike_lunchUR.jpeg' %}" alt="Mike Chef" style="max-width: 300px; margin: 20px auto;">
+            <p>Mike, nuestra mascota, garantiza el mejor sabor con cariño.</p>
+        </div>
+        <div class="img-box">
+            <img src="{% static 'imagenes/almuerzo_saludable.jpeg' %}" alt="Almuerzo saludable" style="max-width: 300px; margin: 20px auto;">
+            <p>Deliciosas opciones para mantenerte lleno de energía durante el día.</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
