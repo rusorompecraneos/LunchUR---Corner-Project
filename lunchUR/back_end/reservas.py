@@ -78,7 +78,7 @@ class Reservas_Almuerzos(View):
 
             
             # AQUI VAMOS AGREGAR LA ALETORIDAD DEL NUMERO:
-            numero_reserva = random.randint(0, 99)
+            numero_reserva = random.randint(0, 80)
             
             nueva_reserva = Reserva(
                 usuario=usuario,

@@ -8,18 +8,13 @@ from django.views import View
 from back_end.registro import RegistroView
 from back_end.funciones import ofertas_del_dia 
 from .models import CanalDeApoyo
-from .models import PerfilUsuario
-from .models import usuarios
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from back_end.login import Login_usuario
 from back_end.home import HomeView
 from back_end.reservas import Reservas_Almuerzos
 from back_end.plan import PlanNutricional
 from back_end.productos_populares import Productos_populares
 from back_end.historial_de_compras import Historial_de_compras
-from back_end.editar_perfil import editar_perfil
-from django.core.exceptions import ObjectDoesNotExist
+from back_end.perfil_usuario import Perfil_usuario
 from mi_admin.forms import PerfilUsuarioForm
 from django.shortcuts import get_object_or_404
 
@@ -82,36 +77,10 @@ reservas_view = Reservas_Almuerzos()
 def mi_vista_personalizada(request):
     return Reservas_Almuerzos.as_view()(request)
 
-
- #Funcion para mostrar el perfil del usuario. (SE DEJA CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE METERLE EL CCS). 
-def perfil_usuario(request):
-    numero_id = request.session.get('numero_id')
-
-    if not numero_id:
-        return redirect('login')
-
-    try:
-        usuario = usuarios.objects.get(numero_id=numero_id)
-        return render(request, 'perfil_usuario.html', {'usuario': usuario})
-    except usuarios.DoesNotExist:
-        return redirect('login')
-    
-    
-
-
-'''@login_required
-def editar_perfil(request):
-    perfil = get_object_or_404(PerfilUsuario, User=request.user)
-
-    if request.method == 'POST':
-        form = PerfilUsuarioForm(request.POST, request.FILES, instance=perfil)
-        if form.is_valid():
-            form.save()
-            return redirect('perfil')
-    else:
-        form = PerfilUsuarioForm(instance=perfil)
-
-    return render(request, 'editar_perfil.html', {'form': form}) '''
+# Intancia para llamar a la clase para que el usuario pueda acceder a su perfil.
+perfil_usuario_view = Perfil_usuario()  
+def mi_vista_personalizada(request):
+    return Perfil_usuario.as_view()(request)
     
 #Instanciamos para poder ver el plan de alimentos. 
 

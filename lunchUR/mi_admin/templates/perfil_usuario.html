@@ -1,4 +1,4 @@
-<!-- OJOOOOOOOO, SE DEJA EL ARHCIVO CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE IMPLEMENTAR EL CCS- -->>
+<!-- OJOOOOOOOO, SE DEJA EL ARHCIVO CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE IMPLEMENTAR EL CCS- -->
 {% extends 'Layouts/base_home.html' %}
 
 {% block content %}
@@ -17,12 +17,10 @@
         <h2> Mi Perfil</h2>
 
     {% if perfil %}
-    <p><strong>Nombre:</strong> {{ usuario.nombre }} {{ usuario.apellido }}</p>
-    <p><strong>Correo:</strong> {{ usuario.correo_electronico }}</p>
-    <p><strong>Número de Documento:</strong> {{ usuario.numero_id }}</p>
+    <p><strong>Nombre:</strong> {{ perfil.nombre }} {{ perfil.apellido }}</p>
+    <p><strong>Correo:</strong> {{ perfil.correo_electronico }}</p>
+    <p><strong>Número de Documento:</strong> {{ perfil.numero_id }}</p>
         <p><strong>Rol:</strong> {{ perfil.get_rol_display }}</p>
-    
-        <a href="{% url 'editar_perfil' %}" class="btn btn-primary">Editar Perfil</a>
 
     {% else %}
         <p>No se encontró un perfil para este usuario.</p>

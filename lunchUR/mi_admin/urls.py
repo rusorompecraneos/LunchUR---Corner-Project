@@ -5,11 +5,10 @@ from .views import RegistroView  # Importa el registro que se hizo en la vista.
 from .views import ofertas_del_dia 
 from .views import Nuestros_productos
 from .views import canales_apoyo
-from .views import perfil_usuario
+from .views import Perfil_usuario
 from .views import HomeView
 from .views import Login_usuario
 from .views import Reservas_Almuerzos
-from .views import editar_perfil
 from .views import PlanNutricional
 from .views import Productos_populares
 from .views import Historial_de_compras
@@ -28,8 +27,7 @@ urlpatterns = [
     path('productos/', Nuestros_productos.as_view(), name='productos'), 
     path('canales_de_apoyo/', canales_apoyo, name='canales_apoyo'),
     path('home/', HomeView.as_view(), name='home'), 
-    path('perfil/', perfil_usuario, name='perfil'), 
-    path('editar_perfil/', editar_perfil, name='editar_perfil'),
+    path('perfil/', Perfil_usuario.as_view(), name='perfil_usuario'), 
     path("crear_plan/", PlanNutricional.as_view(), name="crear_plan"),
     path('productos_populares/',Productos_populares.as_view(), name='productos_populares'),
     path('historial_de_compras/', Historial_de_compras.as_view(), name='historial_de_compras'),
