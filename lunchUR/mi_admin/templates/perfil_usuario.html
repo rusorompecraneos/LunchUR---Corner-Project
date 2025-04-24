@@ -1,32 +1,27 @@
-<!-- OJOOOOOOOO, SE DEJA EL ARHCIVO CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE IMPLEMENTAR EL CCS- -->
 {% extends 'Layouts/base_home.html' %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/perfil_usuarios.css' %}">
 
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Perfil</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h2> Mi Perfil</h2>
-
-    {% if perfil %}
-    <p><strong>Nombre:</strong> {{ perfil.nombre }} {{ perfil.apellido }}</p>
-    <p><strong>Correo:</strong> {{ perfil.correo_electronico }}</p>
-    <p><strong>Número de Documento:</strong> {{ perfil.numero_id }}</p>
-        <p><strong>Rol:</strong> {{ perfil.get_rol_display }}</p>
-
-    {% else %}
-        <p>No se encontró un perfil para este usuario.</p>
-    {% endif %}
+<div class="perfil-container">
+    <div class="info-container">
+        <h2>👤 Mi Perfil</h2>
+        {% if perfil %}
+            <div class="datos-usuario">
+                <p><strong>Nombre:</strong> {{ perfil.nombre }} {{ perfil.apellido }}</p>
+                <p><strong>Correo:</strong> {{ perfil.correo_electronico }}</p>
+                <p><strong>Número de Documento:</strong> {{ perfil.numero_id }}</p>
+                <p><strong>Rol:</strong> Estudiante</p>
+            </div>
+        {% else %}
+            <p>No se encontró un perfil para este usuario.</p>
+        {% endif %}
     </div>
-</body>
-</html>
 
-{%endblock%}
+    <div class="imagen-container">
+        <img src="{% static 'imagenes/perfil_del_usuario.png' %}" alt="YO" class="imagen-perfil" style="max-width: 250px; margin: 20px auto;">
+    </div>
+</div>
+
+{% endblock %}

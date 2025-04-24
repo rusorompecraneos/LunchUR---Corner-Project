@@ -27,18 +27,18 @@
       {% csrf_token %}
 
       <div class="input-group">
-        <label for="username" class="form-label">Usuario</label>
+        <label for="username" class="form-label">Usuario/Correo electronico</label>
         <input type="text" name="username" id="username" class="form-control" required>
+      </div>
+
+      <div class="input-group">
+        <label for="Numero_de_id" class="form-label">Número de CC</label>
+        <input type="text" name="Numero_de_id" id="Numero_de_id" class="form-control" required>
       </div>
 
       <div class="input-group">
         <label for="password" class="form-label">Contraseña</label>
         <input type="password" name="password" id="password" class="form-control" required>
-      </div>
-
-      <div class="input-group">
-        <label for="Numero_de_id" class="form-label">Número de ID</label>
-        <input type="text" name="Numero_de_id" id="Numero_de_id" class="form-control" required>
       </div>
 
       <button type="submit">Ingresar</button>
