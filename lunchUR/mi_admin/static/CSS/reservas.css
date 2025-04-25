@@ -186,3 +186,36 @@
     margin-bottom: 1rem;
     border-radius: 5px;
 }
+
+.mis-reservas {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.mis-reservas h3 {
+    font-size: 28px;
+    color: #7a003c;
+    margin-bottom: 20px;
+}
+
+.ver-mis-reservas {
+    margin-top: 20px;
+}
+
+.btn-ver-reservas {
+    background-color: #7a003c;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(122, 0, 60, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-ver-reservas:hover {
+    background-color: #a00450;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(122, 0, 60, 0.3);
+}

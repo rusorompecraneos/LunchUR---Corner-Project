@@ -12,6 +12,7 @@ from .views import Reservas_Almuerzos
 from .views import PlanNutricional
 from .views import Productos_populares
 from .views import Historial_de_compras
+from .views import BotonReservas
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,8 +32,8 @@ urlpatterns = [
     path("crear_plan/", PlanNutricional.as_view(), name="crear_plan"),
     path('productos_populares/',Productos_populares.as_view(), name='productos_populares'),
     path('historial_de_compras/', Historial_de_compras.as_view(), name='historial_de_compras'),
-
-    
+    path('boton_reservas/', BotonReservas.as_view(), name='boton_reservas'),
+ 
 ]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

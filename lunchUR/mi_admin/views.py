@@ -14,6 +14,7 @@ from back_end.reservas import Reservas_Almuerzos
 from back_end.plan import PlanNutricional
 from back_end.productos_populares import Productos_populares
 from back_end.historial_de_compras import Historial_de_compras
+from back_end.boton_reservas import BotonReservas
 from back_end.perfil_usuario import Perfil_usuario
 from mi_admin.forms import PerfilUsuarioForm
 from django.shortcuts import get_object_or_404
@@ -82,21 +83,24 @@ def mi_vista_personalizada(request):
     return Perfil_usuario.as_view()(request)
     
 #Instanciamos para poder ver el plan de alimentos. 
-
 planes_alimentacion_view = PlanNutricional()  
 def mi_vista_personalizada(request):
     return PlanNutricional.as_view()(request)
 
-#############3
+# vista para productos populares
 productos_populares_view = Productos_populares()  
 def mi_vista_personalizada(request):
     return Productos_populares.as_view()(request)
 
-
-#############
+# vista para el historial de compras
 historial_de_compras_s_view = Historial_de_compras()  
 def mi_vista_personalizada(request):
     return Historial_de_compras.as_view()(request)
+
+# vista para el boton de reservas
+boton_reservas_view = BotonReservas()  
+def mi_vista_personalizada(request):
+    return BotonReservas.as_view()(request)
 
 
 
