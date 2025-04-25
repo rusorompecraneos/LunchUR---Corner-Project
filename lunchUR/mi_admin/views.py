@@ -40,23 +40,22 @@ class inicio(View):
 #Clase creada para visualizar los precios y productos. 
 class Nuestros_productos(View):    
     def get(self, request):
-        precios = [
-            ("Ensalada energetica ", "$12.000"),
-            ("Bowl gladiador ", "$15.000"),
-            ("Mega muscle plato ", "$15.000"),
-            ("Hamgurguesa artesanal ", "$14.000"),
-            ("Estofado casero ", "$13.500"),
-            ("Tortilla saludable  ","$12.000"),
-            ("Pasta tradicional ", "$14.500"),
-            ("Menu criollo ", "$14.000"),
-            ("Bolw proteico ", "$16.000"),
-            ("Menu marino ", "$15.800"),
-            ("Clasico casero ", "$13.000"),
+        productos = [
+            ("Ensalada energética", "Mix de hojas verdes, garbanzos, quinoa, aguacate, con aderezo de mostaza y miel", "$12.000"),
+            ("Bowl gladiador", "Pechuga de pavo con garbanzos, arroz integral y espinaca, aderezado con crema de yogur y mostaza", "$15.000"),
+            ("Mega muscle plato", "Pechuga de pollo al grill con camote asado, brócoli al vapor y una porción de arroz integral", "$15.000"),
+            ("Hamburguesa artesanal", "Hamburguesa de res o pollo con lechuga, tomate y aderezo especial, con papas al horno y salsa secreta de Mike", "$14.000"),
+            ("Estofado casero", "Carne de res cocida a fuego lento con papas, zanahorias y guisantes, acompañada de arroz blanco", "$13.500"),
+            ("Tortilla saludable", "Tortilla de espinaca y queso, acompañada de pan integral y guacamole", "$12.000"),
+            ("Pasta tradicional", "Espaguetis en salsa boloñesa, arroz integral, acompañados de pan de ajo y una ensalada", "$14.500"),
+            ("Menú criollo", "Lomo saltado con papas fritas y arroz, servido con una porción de crema huancaína", "$14.000"),
+            ("Bowl proteico", "Arroz integral con pollo, aguacate, huevo frito, lomo de carne y aderezo de yogur", "$16.000"),
+            ("Menú marino", "Filete de pescado a la plancha con puré de camote, ensalada y una rodaja de limón y bebida", "$15.800"),
+            ("Clásico casero", "Jugoso filete de res o pollo a la plancha, acompañado de arroz, ensalada fresca y puré de papas", "$13.000"),
+        ]
         
-    ]
-        
-        return render(request, 'nuestros_productos.html', {'precios': precios})
-            
+        return render(request, 'nuestros_productos.html', {'productos': productos})
+
 # Funcion para ver las ofertas del dia. 
 def ofertas_del_dia(request):  # request es obligatorio como primer argumento
     return render(request, 'ofertas.html')

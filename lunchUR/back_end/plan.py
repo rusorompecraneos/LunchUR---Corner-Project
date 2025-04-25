@@ -34,7 +34,7 @@ class PlanNutricional(View):
                 "Avena con fruta y yogur", "Tostadas integrales con huevo", "Smoothie de banana y mantequilla de maní"
             ],
             "almuerzo": [
-                "Pollo con arroz y verduras", "Pescado al horno con camote", "Lentejas con quinoa y ensalada"
+                "Bowl gladiador", "Mega muscle plato", "Tortilla saludable", "Menu marino", "Ensalada energetica", "Pasta tradicional"
             ],
             "cena": [
                 "Ensalada con huevo y aguacate", "Tortilla de espinaca", "Crema de verduras con pan integral"
@@ -42,11 +42,11 @@ class PlanNutricional(View):
         }
 
         if objetivo == "subir peso":
-            comidas_base["snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo"]
+            comidas_base["snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo", "Rebanada de pan y 2 huevos"]
         elif objetivo == "bajar peso":
             comidas_base["snack"] = ["Zanahoria con hummus", "Manzana con canela", "Yogur bajo en grasa"]
         else:
-            comidas_base["snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde"]
+            comidas_base["snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde", "Una fruta de tu preferencia"]
 
         dias_semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
         plan = []

@@ -2,32 +2,28 @@
 {% load static %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Nuestros Productos</title>
-    <link rel="stylesheet" href="{% static 'css/nuestros_productos.css' %}">
-</head>
-<body>
-    <!-- contenedor principal  -->
-    <div class="productos-container">
-        <h1>Nuestros Productos</h1>
+<link rel="stylesheet" href="{% static 'css/nuestros_productos.css' %}">
 
-        <!-- tabla para mostrar platos y precios -->
-        <table>
+<div class="productos-container">
+    <h1>Nuestros Productos</h1>
+
+    <table>
+        <thead>
             <tr>
                 <th>Plato</th>
+                <th>Descripción</th>
                 <th>Precio</th>
             </tr>
-            {% for plato, precio in precios %}
+        </thead>
+        <tbody>
+            {% for nombre, descripcion, precio in productos %}
             <tr>
-                <td>{{ plato }}</td>
+                <td>{{ nombre }}</td>
+                <td>{{ descripcion }}</td>
                 <td>{{ precio }}</td>
             </tr>
             {% endfor %}
-        </table>
-    </div>
-</body>
-</html>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
