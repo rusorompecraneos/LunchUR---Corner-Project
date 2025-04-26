@@ -1,12 +1,10 @@
  #En la carpeta "mi_admin" se crea una carpeta llamada "Templates" para que el front (html y css).
  #Aqui va el back
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas.
 from django.views import View
 from back_end.registro import RegistroView
-from back_end.funciones import ofertas_del_dia 
 from .models import CanalDeApoyo
 from back_end.login import Login_usuario
 from back_end.home import HomeView
@@ -16,9 +14,6 @@ from back_end.productos_populares import Productos_populares
 from back_end.historial_de_compras import Historial_de_compras
 from back_end.boton_reservas import BotonReservas
 from back_end.perfil_usuario import Perfil_usuario
-from mi_admin.forms import PerfilUsuarioForm
-from django.shortcuts import get_object_or_404
-
 
         
 #Llamamos a la funcion de login. 

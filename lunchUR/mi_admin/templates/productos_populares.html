@@ -1,47 +1,48 @@
-{% extends 'Layouts/base_home.html' %}
-{% load static %}
+    {% extends 'Layouts/base_home.html' %}
+    {% load static %}
 
-{% block content %}
-<link rel="stylesheet" href="{% static 'css/productos_populares.css' %}">
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/productos_populares.css' %}">
 
-<div class="productos-populares-container">
-    <h1>🍽️ Productos Populares</h1>
-    <p class="descripcion">¡Descubre los productos más vendidos que han conquistado a toda la comunidad UR!</p>
+    <div class="productos-populares-container">
+        <h1>🍽️ Productos Populares</h1>
+        <p class="descripcion">¡Descubre los productos más vendidos que han conquistado a toda la comunidad UR!</p>
 
-    <div class="productos-lista">
+        <div class="productos-lista">
 
-        <div class="producto">
-            <img src="{% static 'imagenes/hamburguesa_artesanal.png' %}" alt="Hamburguesa Artesanal">
-            <h3>Hamburguesa Artesanal</h3>
-            <p class="descripcion-corta">Jugosa carne, pan artesanal, vegetales frescos y la salsa secreta de Mike.</p>
-            <strong>$14.900</strong>
-            <a href="#" class="btn-ver">Ver más</a>
+            <div class="producto">
+                <img src="{% static 'imagenes/hamburguesa_artesanal.png' %}" alt="Hamburguesa Artesanal">
+                <h3>Hamburguesa Artesanal</h3>
+                <p class="descripcion-corta">Jugosa carne, pan artesanal, vegetales frescos y la salsa secreta de Mike.</p>
+                <strong>$14.900</strong>
+                <a href="{% url 'reservas' %}" class="btn-ver">¡Reservar ahora!</a>
+            </div>
+
+            <div class="producto">
+                <img src="{% static 'imagenes/bowl_gladiador.jpeg' %}" alt="Bowl Gladiador">
+                <h3>Mega Muscle Plato</h3>
+                <p class="descripcion-corta">Pollo a la plancha, arroz integral, frijoles y batata. ¡Nutrición completa!</p>
+                <strong>$16.500</strong>
+                <a href="{% url 'reservas' %}" class="btn-ver">¡Reservar ahora!</a>
+            </div>
+
+            <div class="producto">
+                <img src="{% static 'imagenes/mega_muscle_plato.jpg' %}" alt="Mega Muscle Plato">
+                <h3>Bowl Gladiador</h3>
+                <p class="descripcion-corta">Base de quinoa, vegetales asados, aguacate y proteína al gusto.</p>
+                <strong>$13.200</strong>
+                <a href="{% url 'reservas' %}" class="btn-ver">¡Reservar ahora!</a>
+            </div>
+
+            <div class="producto">
+                <img src="{% static 'imagenes/ensalada_energetica.jpeg' %}" alt="Ensalada Energética">
+                <h3>Ensalada Energética</h3>
+                <p class="descripcion-corta">Mezcla de hojas verdes, semillas, frutas frescas y aderezo natural.</p>
+                <strong>$11.800</strong>
+                <a href="{% url 'reservas' %}" class="btn-ver">¡Reservar ahora!</a>
+
+            </div>
+
         </div>
-
-        <div class="producto">
-            <img src="{% static 'imagenes/mega_muscle_plato.jpg' %}" alt="Mega Muscle Plato">
-            <h3>Mega Muscle Plato</h3>
-            <p class="descripcion-corta">Pollo a la plancha, arroz integral, frijoles y batata. ¡Nutrición completa!</p>
-            <strong>$16.500</strong>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-
-        <div class="producto">
-            <img src="{% static 'imagenes/bowl_gladiador.jpeg' %}" alt="Bowl Gladiador">
-            <h3>Bowl Gladiador</h3>
-            <p class="descripcion-corta">Base de quinoa, vegetales asados, aguacate y proteína al gusto.</p>
-            <strong>$13.200</strong>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-
-        <div class="producto">
-            <img src="{% static 'imagenes/ensalada_energetica.jpeg' %}" alt="Ensalada Energética">
-            <h3>Ensalada Energética</h3>
-            <p class="descripcion-corta">Mezcla de hojas verdes, semillas, frutas frescas y aderezo natural.</p>
-            <strong>$11.800</strong>
-            <a href="#" class="btn-ver">Ver más</a>
-        </div>
-
     </div>
-</div>
-{% endblock %}
+    {% endblock %}

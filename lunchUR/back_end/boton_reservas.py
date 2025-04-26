@@ -8,5 +8,5 @@ class BotonReservas(View):
         if not numero_id:
             return redirect('login')
 
-        reservas = Reserva.objects.filter(usuario__numero_id=numero_id)
+        reservas = Reserva.objects.filter(usuario__numero_id=numero_id).order_by('-fecha_reserva')
         return render(request, 'boton_reservas.html', {'reservas': reservas})

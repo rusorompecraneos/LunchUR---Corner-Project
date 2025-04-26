@@ -7,11 +7,11 @@ class PlanNutricional(View):
         return render(request, 'planes_nutricionales.html')
 
     def post(self, request):
-        peso = float(request.POST.get("peso"))
-        estatura_cm = float(request.POST.get("estatura"))
+        peso = float(request.POST.get("Peso"))
+        estatura_cm = float(request.POST.get("Estatura"))
         estatura_m = estatura_cm / 100
-        edad = int(request.POST.get("edad"))
-        actividad = request.POST.get("actividad_fisica")  # 'baja', 'moderada', 'alta'
+        edad = int(request.POST.get("Edad"))
+        actividad = request.POST.get("Actividad_fisica")  # 'baja', 'moderada', 'alta'
 
         imc = peso / (estatura_m ** 2)
 
@@ -31,22 +31,22 @@ class PlanNutricional(View):
         #Definiremos algunas comidas base que van a servir para todos los objetivos.  
         comidas_base = {
             "desayuno": [
-                "Avena con fruta y yogur", "Tostadas integrales con huevo", "Smoothie de banana y mantequilla de maní"
+                "Avena con fruta y yogur", "Tostadas integrales con huevo", "Smoothie de banana y mantequilla de maní", "Omelette de vegetales", "Yogur griego con frutos rojos y granola"
             ],
             "almuerzo": [
-                "Bowl gladiador", "Mega muscle plato", "Tortilla saludable", "Menu marino", "Ensalada energetica", "Pasta tradicional"
+                "Bowl gladiador", "Mega muscle plato", "Tortilla saludable", "Menu marino", "Ensalada energetica", "Pasta tradicional", "Clasico casero"
             ],
             "cena": [
-                "Ensalada con huevo y aguacate", "Tortilla de espinaca", "Crema de verduras con pan integral"
+                "Ensalada con huevo y aguacate", "Tortilla de espinaca", "Crema de verduras con pan integral", "Tacos de lechuga", "Salmón al horno con espárragos"
             ]
         }
 
         if objetivo == "subir peso":
-            comidas_base["snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo", "Rebanada de pan y 2 huevos"]
+            comidas_base["snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo", "Rebanada de pan y 2 huevos", "Yogur natural con semillas y miel"]
         elif objetivo == "bajar peso":
-            comidas_base["snack"] = ["Zanahoria con hummus", "Manzana con canela", "Yogur bajo en grasa"]
+            comidas_base["snack"] = ["Zanahoria con hummus", "Manzana con canela", "Yogur bajo en grasa", "Palitos de zanahoria o pepino con hummus"]
         else:
-            comidas_base["snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde", "Una fruta de tu preferencia"]
+            comidas_base["snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde", "Una fruta de tu preferencia", "Tostadas de arroz con aguacate"]
 
         dias_semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
         plan = []
@@ -54,10 +54,10 @@ class PlanNutricional(View):
         for dia in dias_semana:
             plan.append({
                 "dia": dia,
-                "desayuno": random.choice(comidas_base["desayuno"]),
-                "almuerzo": random.choice(comidas_base["almuerzo"]),
-                "cena": random.choice(comidas_base["cena"]),
-                "snack": random.choice(comidas_base["snack"]),
+                "desayuno": random.choice(comidas_base["Desayuno"]),
+                "almuerzo": random.choice(comidas_base["Almuerzo"]),
+                "cena": random.choice(comidas_base["Cena"]),
+                "snack": random.choice(comidas_base["Snack"]),
             })
 
         return render(request, 'planes_nutricionales.html', {

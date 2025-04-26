@@ -1,7 +1,6 @@
 {% extends 'Layouts/base_home.html' %}
 {% block content %}
 {% load static %}
-
 <link rel="stylesheet" href="{% static 'css/reservas.css' %}">
 
 <div class="reservas-container animate__animated animate__fadeIn">
@@ -33,13 +32,14 @@
     </form>
 
     {% if reservas %}
-    <div class="mis-reservas">
-        <h3>📝 Mis Reservas</h3>    
-        <div class="ver-mis-reservas">
-            <a href="{% url 'boton_reservas' %}" class="btn-ver-reservas">📝 Ver Mis Reservas</a>
-        </div>  
-    </div>
+        <div class="mis-reservas">
+            <h3>📝 Mis Reservas</h3>    
+            <div class="ver-mis-reservas">
+                <a href="{% url 'boton_reservas' %}" class="btn-reservar">📝 Ver Mis Reservas</a>
+            </div>  
+        </div>
     {% endif %}
+
 </div>
 
 {% endblock %}
