@@ -7,7 +7,7 @@ from django.utils import timezone
 class usuarios(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100, default = 'Null')
-    numero_id = models.IntegerField(unique=True)
+    numero_id = models.BigIntegerField(unique=True)
     correo_electronico = models.EmailField(unique=True, max_length=60, null=False, blank=False)
     contraseña = models.CharField(max_length=255)
     fecha_registro = models.DateTimeField(auto_now_add=True)
