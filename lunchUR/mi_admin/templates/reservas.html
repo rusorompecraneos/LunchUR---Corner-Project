@@ -9,7 +9,7 @@
     {% if messages %}
         <div class="messages">
             {% for message in messages %}
-                <div class="alert {{ message.tags }}">
+                <div class="alert-error-{{ message.level_tag }}">
                     {{ message }}
                 </div>
             {% endfor %}
