@@ -30,23 +30,23 @@ class PlanNutricional(View):
             
         #Definiremos algunas comidas base que van a servir para todos los objetivos.  
         comidas_base = {
-            "desayuno": [
+            "Desayuno": [
                 "Avena con fruta y yogur", "Tostadas integrales con huevo", "Smoothie de banana y mantequilla de maní", "Omelette de vegetales", "Yogur griego con frutos rojos y granola"
             ],
-            "almuerzo": [
+            "Almuerzo": [
                 "Bowl gladiador", "Mega muscle plato", "Tortilla saludable", "Menu marino", "Ensalada energetica", "Pasta tradicional", "Clasico casero"
             ],
-            "cena": [
+            "Cena": [
                 "Ensalada con huevo y aguacate", "Tortilla de espinaca", "Crema de verduras con pan integral", "Tacos de lechuga", "Salmón al horno con espárragos"
             ]
         }
 
         if objetivo == "subir peso":
-            comidas_base["snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo", "Rebanada de pan y 2 huevos", "Yogur natural con semillas y miel"]
+            comidas_base["Snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo", "Rebanada de pan y 2 huevos", "Yogur natural con semillas y miel"]
         elif objetivo == "bajar peso":
-            comidas_base["snack"] = ["Zanahoria con hummus", "Manzana con canela", "Yogur bajo en grasa", "Palitos de zanahoria o pepino con hummus"]
+            comidas_base["Snack"] = ["Zanahoria con hummus", "Manzana con canela", "Yogur bajo en grasa", "Palitos de zanahoria o pepino con hummus"]
         else:
-            comidas_base["snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde", "Una fruta de tu preferencia", "Tostadas de arroz con aguacate"]
+            comidas_base["Snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde", "Una fruta de tu preferencia", "Tostadas de arroz con aguacate"]
 
         dias_semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
         plan = []

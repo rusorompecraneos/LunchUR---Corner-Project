@@ -7,10 +7,10 @@
     <h1>Crear Plan Alimenticio</h1>
     <form method="POST">
         {% csrf_token %}
-        <input type="number" step="0.1" name="peso" placeholder="Peso (kg)" required>
-        <input type="number" step="0.01" name="estatura" placeholder="Estatura (m)" required>
-        <input type="number" name="edad" placeholder="Edad (años)" required>
-        <select name="actividad" required>
+        <input type="number" step="0.1" name="Peso" placeholder="Peso (kg)" required>
+        <input type="number" step="0.01" name="Estatura" placeholder="Estatura (m)" required>
+        <input type="number" name="Edad" placeholder="Edad (años)" required>
+        <select name="Actividad_fisica" required>
             <option value="" disabled selected>Nivel de actividad física</option>
             <option value="baja">Baja</option>
             <option value="media">Media</option>
