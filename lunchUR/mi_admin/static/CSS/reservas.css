@@ -47,23 +47,18 @@
     margin-bottom: 1rem;
     font-weight: bold;
 }
-/* -------------------- MENSAJES DE ALERTA -------------------- */
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-}
+
+
 .mensaje.success {
     background-color: #d4edda;
     color: #155724;
 }
-
+/*
 .mensaje.error {
     background-color: #f8d7da;
     color: #721c24;
 }
+    */
 
 .formulario-reserva {
     display: flex;
@@ -138,32 +133,54 @@
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.alert-success,
-.alert.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+/* -------------------- MENSAJES DE ALERTA -------------------- */
+.messages {
+    margin-bottom: 15px;
 }
 
-.alert-info,
-.alert.info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
+.alert {
+    padding: 10px !important;
+    border-radius: 5px !important;
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
 }
 
-.alert-warning,
-.alert.warning {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
+.alert-success {
+    background-color: #d4edda !important;
+    color: #155724 !important;
 }
 
-.alert-error,
+.alert-error, .alert-danger {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
 .alert.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border: 2px solid #f5c6cb !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2) !important;
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
 }
+
+/* Éxito */
+.alert.success, .alert-success {
+    background-color: #e6f9f0;
+    color: #1d7a4d;
+    border: 2px solid #5ac18e;
+}
+
+/* Animación */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 

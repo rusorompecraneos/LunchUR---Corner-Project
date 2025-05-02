@@ -24,8 +24,6 @@ class Reservas_Almuerzos(View):
         menus_disponibles = menus.objects.all()
         
         
-        
-
         messages.success(request, "Bienvenido a tus reservas 😊")
         messages.info(request, "Aquí podrás ver y hacer tus reservas.")
         messages.warning(
@@ -63,15 +61,15 @@ class Reservas_Almuerzos(View):
             ahora = timezone.now()
 
             if fecha_reserva_dt < ahora + timedelta(hours=3):
-                messages.error(request, "La reserva debe hacerse al menos 3 horas antes.")
+                messages.error(request, "❌ La reserva debe hacerse al menos 3 horas antes.")
                 return redirect("reservas")
 
             if fecha_reserva_dt > ahora + timedelta(days=1):
-                messages.error(request, "La reserva debe hacerse máximo con 1 día de anticipación.")
+                messages.error(request, "❌ La reserva debe hacerse máximo con 1 día de anticipación.")
                 return redirect("reservas")
 
             if Reserva.objects.filter(fecha_reserva=fecha_reserva_dt).exists():
-                messages.error(request, "Esta hora ya está reservada.")
+                messages.error(request, "❌ Esta hora ya está reservada.")
                 return redirect("reservas")
 
             menu = menus.objects.get(id=menu_id)
@@ -89,7 +87,7 @@ class Reservas_Almuerzos(View):
             )
             nueva_reserva.save()
 
-            messages.success(request, "¡Reserva realizada con éxito! 🎉")
+            messages.success(request, "¡Reserva realizada con éxito! ✅🎉")
             return redirect("reservas")
 
         except ValueError:
