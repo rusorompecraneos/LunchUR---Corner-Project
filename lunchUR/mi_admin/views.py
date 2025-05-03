@@ -48,6 +48,11 @@ class Nuestros_productos(View):
             ("Bowl proteico", "Arroz integral con pollo, aguacate, huevo frito, lomo de carne y aderezo de yogur", "$16.000"),
             ("Menú marino", "Filete de pescado a la plancha con puré de camote, ensalada y una rodaja de limón y bebida", "$15.800"),
             ("Clásico casero", "Jugoso filete de res o pollo a la plancha, acompañado de arroz, ensalada fresca y puré de papas", "$13.000"),
+            ("Wrap Natural", "Tortilla integral rellena de pollo a la plancha, lechuga, tomate y aderezo de yogur griego", "$15.500"),
+            ("Pollo Thai Fit", "Tiras de pollo salteadas con vegetales orientales y salsa de soya baja en sodio, servido con arroz de coliflor", "$17.000"), 
+            ("Curry Vegetariano", "Garbanzos y vegetales cocinados en leche de coco y curry, acompañado con arroz basmati", "$16.900"), 
+            ("Plato Caribeño", "Pescado al mojo, arroz con coco, tajadas de plátano maduro y ensalada de repollo", "$17.500"), 
+            ("Ensalada Tropical", "Lechuga romana, mango, aguacate, pollo a la parrilla y vinagreta de maracuyá", "$14.900")
         ]
         
         return render(request, 'nuestros_productos.html', {'productos': productos})

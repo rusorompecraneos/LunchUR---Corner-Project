@@ -42,7 +42,7 @@ body {
 .titulo-objetivo {
     text-align: center;
     margin-top: 2rem;
-    font-size: 26px;
+    font-size: 30px;
     color: #730217;
     animation: slideUp 1s ease-in-out;
 }
@@ -57,9 +57,9 @@ body {
 .tarjeta-dia {
     background: white;
     border-left: 6px solid #730217;
-    padding: 20px;
+    padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
     animation: zoomIn 0.5s ease-in-out;
 }
 

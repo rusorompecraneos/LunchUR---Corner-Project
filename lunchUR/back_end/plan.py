@@ -16,10 +16,10 @@ class PlanNutricional(View):
         imc = peso / (estatura_m ** 2)
 
         if imc < 18.5:
-            objetivo = "subir"
+            objetivo = "Subir de peso"
         elif 18.5 <= imc < 25:
             if actividad == "alta":
-                objetivo = "subir"
+                objetivo = "Subir de peso"
             else:
                 objetivo = "Mantener el peso"
         elif 25 <= imc < 30:
@@ -48,7 +48,7 @@ class PlanNutricional(View):
         else:
             comidas_base["Snack"] = ["Fruta fresca", "Té verde y galletas integrales", "Smoothie verde", "Una fruta de tu preferencia", "Tostadas de arroz con aguacate"]
 
-        dias_semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+        dias_semana = ["Lunes:", "Martes:", "Miércoles:", "Jueves:", "Viernes:", "Sábado:", "Domingo:"]
         plan = []
 
         for dia in dias_semana:
