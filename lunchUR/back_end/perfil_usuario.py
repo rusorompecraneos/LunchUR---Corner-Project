@@ -3,7 +3,7 @@ from mi_admin.models import usuarios
 from django.views import View
 
 
-#Funcion para mostrar el perfil del usuario. (SE DEJA CON UN ERROR DE LOGICA, SE SOLUCIONARA DESPUES DE METERLE EL CCS). 
+#Funcion para mostrar el perfil del usuario. (Luego de la implementacion del CSS, se arreglo el problema que habia. ). 
 class Perfil_usuario(View):
     def get(self, request):
         numero_id = request.session.get('numero_id')

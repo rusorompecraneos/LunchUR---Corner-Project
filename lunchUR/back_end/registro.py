@@ -20,34 +20,34 @@ class RegistroView(View):
                 messages.error(request, "Todos los campos son obligatorios.")
                 return redirect('registro')
 
-            # Validar que el número de documento sea numérico
+            # Validamos que el número de documento sea numérico
             try:
                 numero_id_int = int(numero_id)
             except ValueError:
                 messages.error(request, "❌ El número de documento debe contener solo números.")
                 return redirect('registro')
 
-            # Validar longitud máxima del documento
+            # Validamos longitud máxima del documento
             if len(numero_id) > 20:
                 messages.error(request, "⚠️ El número de documento no puede tener más de 20 dígitos.")
                 return redirect('registro')
 
-            # Validar correo único
+            # Validamos la unicidad del correo electronico. 
             if usuarios.objects.filter(correo_electronico=correo_electronico).exists():
                 messages.error(request, "¡El correo ya está registrado! Por favor registra un correo válido.")
                 return redirect('registro')
 
-            # Validar documento único
+            # Validamos la unicidad del documento. 
             if usuarios.objects.filter(numero_id=numero_id).exists():
                 messages.error(request, "¡El número de documento ya está registrado!")
                 return redirect('registro')
 
-            # Validar longitud de contraseña
+            # Validamos longitud de contraseña
             if len(contraseña) < 6:
                 messages.error(request, "¡La contraseña debe tener al menos 6 caracteres!")
                 return redirect('registro')
 
-            # Crear usuario
+            # Creamos la cuenta de usuario y lo guardamos en el moedelo de usuarios.
             nuevo_usuario = usuarios(
                 nombre=nombre,
                 apellido=apellido,

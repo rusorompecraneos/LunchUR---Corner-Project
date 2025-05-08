@@ -2,10 +2,11 @@ from django.views import View
 from django.shortcuts import render
 import random
 
+# Clase para determinar el objetivo del usuario. 
 class PlanNutricional(View):
     def get(self, request):
         return render(request, 'planes_nutricionales.html')
-
+    # Funcion en la que definimos 
     def post(self, request):
         peso = float(request.POST.get("Peso"))
         estatura_cm = float(request.POST.get("Estatura"))
@@ -40,7 +41,7 @@ class PlanNutricional(View):
                 "Ensalada con huevo y aguacate", "Tortilla de espinaca", "Crema de verduras con pan integral", "Tacos de lechuga", "Salmón al horno con espárragos"
             ]
         }
-
+        # Definimos los objetivos que existen y un menu para cada objetivo. 
         if objetivo == "subir peso":
             comidas_base["Snack"] = ["Batido proteico", "Frutos secos con yogur", "Pan con aguacate y huevo", "Rebanada de pan y 2 huevos", "Yogur natural con semillas y miel"]
         elif objetivo == "bajar peso":
@@ -51,6 +52,7 @@ class PlanNutricional(View):
         dias_semana = ["Lunes:", "Martes:", "Miércoles:", "Jueves:", "Viernes:", "Sábado:", "Domingo:"]
         plan = []
 
+        # Hacemos el for, para recorrer la lista de dias de la semana y de menus. 
         for dia in dias_semana:
             plan.append({
                 "dia": dia,

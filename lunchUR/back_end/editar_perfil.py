@@ -8,7 +8,7 @@ def editar_perfil(request):
     try:
         perfil = PerfilUsuario.objects.get(User__id=request.session['usuario_id'])
     except ObjectDoesNotExist:
-        return redirect('perfil')  # Redirige si no hay perfil
+        return redirect('perfil')  # Redirige si no hay ningun perfil. 
 
     if request.method == 'POST':
         perfil.numero_documento = request.POST.get('numero_documento')

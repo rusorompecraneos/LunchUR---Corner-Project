@@ -2,7 +2,7 @@
  #Aqui va el back
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas.
+from django.contrib.auth.hashers import make_password #importamos la funcion para hashear las contraseñas. Aunque actualmente no la usamos, ahi eta por si acaso jaja
 from django.views import View
 from back_end.registro import RegistroView
 from .models import CanalDeApoyo

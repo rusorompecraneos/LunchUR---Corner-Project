@@ -6,7 +6,7 @@ from django.utils import timezone
 from datetime import timedelta
 import random
 
-
+# Bienvenida al usuario y redireccion al html de reservas. 
 class Reservas_Almuerzos(View):
     def get(self, request):
         numero_id = request.session.get("numero_id")
@@ -35,7 +35,7 @@ class Reservas_Almuerzos(View):
             'reservas': reservas,
             'menus': menus_disponibles
         })
-
+    # Funcion para que el usuario haga sus reservas y las visualice en caso de que tenga alguna. 
     def post(self, request):
         usuario_id = request.session.get("usuario_id")
         if not usuario_id:
@@ -78,6 +78,7 @@ class Reservas_Almuerzos(View):
             # AQUI VAMOS AGREGAR LA ALETORIDAD DEL NUMERO:
             numero_reserva = random.randint(0, 80)
             
+            # Aqui, creamos la nueva reserva y lo agregamos a la tabla de reservas. 
             nueva_reserva = Reserva(
                 usuario=usuario,
                 fecha_reserva=fecha_reserva_dt,
@@ -86,7 +87,8 @@ class Reservas_Almuerzos(View):
                 numero_aleatorio=numero_reserva
             )
             nueva_reserva.save()
-
+            
+            # Mostramos los mensajes correspondientes del caso. 
             messages.success(request, "¡Reserva realizada con éxito! ✅🎉")
             return redirect("reservas")
 
