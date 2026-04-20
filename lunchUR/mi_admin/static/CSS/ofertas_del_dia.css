@@ -1,0 +1,122 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/*contenedor principal */
+.ofertas-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #990000;
+    animation: fadeIn 1s ease-out;
+}
+
+/* encabezado */
+.header {
+    margin-bottom: 30px;
+}
+
+.header .logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #990000;
+    margin-bottom: 10px;
+    font-size: 32px;
+    animation: slideIn 1s ease-out;
+}
+
+.subtitulo {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+/* estilos para la lista de las ofertas */
+.ofertas-lista {
+    margin-top: 20px;
+}
+
+.oferta {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: popIn 0.6s ease-out;
+}
+
+.oferta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* estilos para los títulos  */
+.oferta h3 {
+    color: #990000;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.oferta p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.oferta strong {
+    color: #990000;
+    font-weight: bold;
+}
+
+.descuento {
+    display: block;
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo para validez*/
+.validez {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Estilo para el footer */
+.footer {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #555;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+    animation: fadeIn 1s ease-out;
+}
+
+/* algunas animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

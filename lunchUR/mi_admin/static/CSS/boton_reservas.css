@@ -1,0 +1,81 @@
+body {
+    background-color: #f7f9fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.mis-reservas {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease;
+}
+
+.mis-reservas h3 {
+    color: #7a003c;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #7a003c;
+    padding-bottom: 10px;
+}
+
+.reserva-item {
+    background-color: #f0f0f5;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-left: 6px solid #7a003c;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(122, 0, 60, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reserva-item:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 16px rgba(122, 0, 60, 0.2);
+}
+
+.reserva-item p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.reserva-item strong {
+    color: #7a003c;
+}
+
+/* Colores según estado */
+.estado-pendiente {
+    color: #d99c00;
+    font-weight: bold;
+}
+.estado-confirmada {
+    color: #2e7d32;
+    font-weight: bold;
+}
+.estado-cancelada {
+    color: #c62828;
+    font-weight: bold;
+}
+
+/* Número con ícono */
+.numero-reserva {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+.numero-reserva i {
+    color: #7a003c;
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,99 @@
+{% extends 'Layouts/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+
+<!-- INTRODUCCION PRINCIPAL -->
+<section class="hero-card-container">
+    <div class="hero-card">
+        <h1 class="hero-title">LunchUR: Tu Almuerzo Ideal</h1>
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo Universidad del Rosario" class="logo-rosario" style="max-width: 150px; margin: 20px auto;">
+        <p class="hero-subtitle">Descubre menús personalizados, ahorra tiempo y conecta con tu comunidad universitaria.</p>
+        <a href="/registro" class="hero-button">¡Únete Ahora!</a>
+    </div>
+</section>
+
+<!-- SECCIONES INFORMATIVAS EN TARJETAS -->
+<section class="info-section">
+    <div class="info-card">
+        <h2><i class="fas fa-info-circle"></i> ¿Qué es LunchUR?</h2>
+        <p>
+            LunchUR es una iniciativa para facilitar la gestión de almuerzos en nuestra Universidad. 
+            Buscamos ofrecer una plataforma web que permita a los profesores, estudiantes y funcionarios gestionar 
+            el cronograma de almuerzos según les convenga. Nace de la necesidad de optimizar los espacios de almuerzo.
+        </p>
+    </div>
+    <div class="info-card">
+        <h2><i class="fas fa-cogs"></i> ¿Cómo funciona?</h2>
+        <p>
+            LunchUR utiliza un sistema de calendario para organizar los almuerzos. Los usuarios pueden establecer fechas 
+            y horarios para cada almuerzo. Además, hay un sistema de gestión de pedidos, preferencias de menú y 
+            comunicación entre usuarios para coordinar todo eficientemente.
+        </p>
+    </div>
+</section>
+
+
+<!-- PLATOS DESTACADOS -->
+<hr class="my-5">
+<section class="container my-5">
+    <h2 class="text-center seccion-titulo">Nuestros Platos Destacados</h2>
+    <div class="tarjetas-platos">
+        <div class="tarjeta-plato">
+            <h5 class="titulo-plato">Plato Fittnes:</h5>
+            <img src="{% static 'imagenes/plato_fittnes.jpeg' %}" alt="Plato Fittnes" style="max-width: 400px; margin: 20px auto;">
+            <p>Energía y sabor en cada bocado. ¡Come fuerte, entrena fuerte!</p>
+        </div>
+        <div class="tarjeta-plato">
+            <h5 class="titulo-plato">Plato Vegetariano:</h5>
+            <img src="{% static 'imagenes/Plato_vegetariano.jpeg' %}" alt="Plato Vegetariano" style="max-width: 400px; margin: 20px auto;">
+            <p>Frescura y bienestar en cada plato. ¡Come sano, vive mejor!</p>
+        </div>
+        <div class="tarjeta-plato">
+            <h5 class="titulo-plato">Plato Vegano:</h5>
+            <img src="{% static 'imagenes/Plato_vegano.jpeg' %}" alt="Plato Vegano" style="max-width: 400px; margin: 20px auto;">
+            <p>Sabores que nutren, ingredientes que respetan. ¡Puro poder vegetal!</p>
+        </div>
+        <div class="tarjeta-plato">
+            <h5 class="titulo-plato">Plato Común:</h5>
+            <img src="{% static 'imagenes/Plato_comun.jpeg' %}" alt="Plato Comun" style="max-width: 400px; margin: 20px auto;">
+            <p>El sabor de casa, el cariño de siempre. ¡Un clásico irresistible!</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios-section">
+    <h2 class="titulo-testimonios"><i class="fas fa-comment-dots"></i> Testimonios de Usuarios</h2>
+    <div class="testimonios-container">
+        <div class="testimonio-card">
+            <p class="testimonio-texto">"LunchUR ha transformado por completo mis almuerzos en la universidad. Antes perdía mucho tiempo en filas y rara vez encontraba una opción que me gustara. Ahora reservo en segundos y siempre tengo el plato que prefiero."</p>
+            <p class="testimonio-autor">– Juan Pérez, estudiante de Derecho</p>
+        </div>
+        <div class="testimonio-card">
+            <p class="testimonio-texto">"Como profesora con poco tiempo entre clases, LunchUR ha sido una salvación. La plataforma es fácil de usar, los menús son variados y la puntualidad con la entrega es excelente. ¡Totalmente recomendada!"</p>
+            <p class="testimonio-autor">– Ana Gómez, docente de Economía</p>
+        </div>
+        <div class="testimonio-card">
+            <p class="testimonio-texto">"Lo que más valoro de LunchUR es cómo se adapta a mi estilo de vida. Como vegetariano, encontrar opciones adecuadas era complicado. Ahora tengo variedad, control y tranquilidad a diario. ¡Gracias LunchUR!"</p>
+            <p class="testimonio-autor">– Carlos Ramírez, asistente administrativo</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<hr class="my-5">
+<footer class="footer-custom animate__animated animate__fadeInUp">
+    <div class="container text-center">
+        <p class="footer-text">&copy; 2025 <strong>LunchUR</strong> - Todos los derechos reservados</p>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </div>
+</footer>
+
+
+{% endblock %}

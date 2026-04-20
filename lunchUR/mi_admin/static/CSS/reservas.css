@@ -1,0 +1,186 @@
+.reservas-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #4B1E76; /* color institucional */
+    background-color: #f5f0f9;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #4B1E76;
+}
+
+.header-reservas {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-reservas {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+.header-reservas h2 {
+    color: #a01c2f;
+    margin: 0;
+}
+
+.header-reservas p {
+    color: #6e2c2c;
+    font-size: 1.05rem;
+}
+
+.mensajes-reservas {
+    margin-bottom: 1rem;
+}
+
+.mensaje {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+
+.mensaje.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+/*
+.mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+    */
+
+.formulario-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.formulario-reserva h3 {
+    color: #a01c2f;
+    margin-bottom: 1rem;
+}
+
+.formulario-reserva label {
+    font-weight: bold;
+}
+
+.formulario-reserva input,
+.formulario-reserva select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.formulario-reserva input[type="datetime-local"] {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.formulario-reserva button,
+.btn-reservar {
+    background-color: #A51C30;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reservar:hover {
+    background-color: #7c1425;
+    text-align: center;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(122, 0, 60, 0.3);
+}
+
+.mis-reservas {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.mis-reservas h3 {
+    font-size: 28px;
+    color: #7a003c;
+    margin-bottom: 20px;
+}
+
+.reserva-item {
+    background-color: #f9f5f1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #e9b949;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------- MENSAJES DE ALERTA -------------------- */
+.messages {
+    margin-bottom: 15px;
+}
+
+.alert {
+    padding: 10px !important;
+    border-radius: 5px !important;
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+}
+
+.alert-success {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+.alert-error, .alert-danger {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+.alert.error {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border: 2px solid #f5c6cb !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2) !important;
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
+}
+
+/* Éxito */
+.alert.success, .alert-success {
+    background-color: #e6f9f0;
+    color: #1d7a4d;
+    border: 2px solid #5ac18e;
+}
+
+/* Animación */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

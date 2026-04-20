@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    animation: fadeInBody 1.2s ease-in;
+}
+
+.home-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #990000;
+    animation: slideInUp 1s ease-out;
+}
+
+h1, h2 {
+    color: #990000;
+    animation: fadeInDown 1s ease-out;
+}
+
+.subtitulo {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    animation: fadeInDown 1s ease-out;
+}
+
+.descripcion-lunchur,
+.alimentacion-saludable {
+    margin: 40px 0;
+    text-align: left;
+    padding: 25px;
+    background-color: #fefefe;
+    border-left: 5px solid #990000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(153, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.acciones-container {
+    margin: 40px 0;
+}
+
+a.home-button {
+    display: block;
+    width: 100%;
+    background-color: #990000;
+    color: white;
+    padding: 15px;
+    margin: 12px 0;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+a.home-button:hover {
+    background-color: #7a0000;
+    transform: scale(1.03);
+}
+
+/* Imágenes decorativas */
+.imagenes-decorativas {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    flex-direction: row; 
+}
+
+.img-box {
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.img-box img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.img-box img:hover {
+    transform: scale(1.05);
+}
+
+.img-box p {
+    margin-top: 10px;
+    color: #555;
+    font-style: italic;
+}
+
+
+/* Animaciones */
+@keyframes fadeInBody {
+    from { opacity: 0; background-color: #ffffff; }
+    to { opacity: 1; background-color: #f9f9f9; }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}

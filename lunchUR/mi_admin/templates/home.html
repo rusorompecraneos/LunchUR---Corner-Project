@@ -1,0 +1,49 @@
+{% extends 'Layouts/base_home.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="home-container">
+
+    <!-- Hero: Bienvenida -->
+    <div class="hero-section">
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo Universidad del Rosario" class="hero-logo">
+        <h1>¡Hola, {{ nombre }}! Bienvenido a <span class="resaltado">LunchUR</span> 🍽️</h1>
+        <p class="subtitulo">Tu portal para reservar almuerzos, consultar promociones y crear planes alimenticios personalizados.</p>
+    </div>
+
+    <!-- Descripción cálida -->
+    <div class="descripcion-lunchur">
+        <h2> ¿Por que usar lunchUR? </h2>
+        <p>LunchUR es tu compañero ideal para mejorar tu experiencia alimenticia dentro de la Universidad del Rosario. 
+        Descubre menús personalizados, consulta promociones del día y organiza tus planes alimenticios con facilidad. 
+        Todo desde un solo lugar, hecho especialmente para ti como parte de nuestra comunidad.</p>
+    </div>
+
+    <!-- Sección alimentación saludable -->
+    <div class="alimentacion-saludable">
+        <h2>🥦 Alimentación Saludable</h2>
+        <p>Creemos en una alimentación nutritiva, balanceada y deliciosa. Con LunchUR puedes planificar tus comidas, 
+        asegurarte de que estés recibiendo los nutrientes adecuados para tu ritmo de vida universitario y ahorrar tiempo en tu día a día.</p>
+    </div>
+
+    <!-- Acciones principales -->
+    <div class="acciones-container">
+    </div>
+
+    <!-- Imágenes decorativas -->
+    <div class="imagenes-decorativas">
+        <div class="img-box">
+            <img src="{% static 'imagenes/mike_lunchUR.jpeg' %}" alt="Mike Chef" style="max-width: 300px; margin: 20px auto;">
+            <p>Mike, nuestra mascota, garantiza el mejor sabor con cariño.</p>
+        </div>
+        <div class="img-box">
+            <img src="{% static 'imagenes/almuerzo_saludable.jpeg' %}" alt="Almuerzo saludable" style="max-width: 320px; margin: 20px auto;">
+            <p>Deliciosas opciones para mantenerte lleno de energía durante el día.</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

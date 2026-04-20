@@ -1,0 +1,53 @@
+{% extends 'Layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- Añadimos esta opcion para que este archivo herede los parametros que definimos en "canales_de_apoyo.css" -->
+<link rel="stylesheet" href="{% static 'css/canales_de_apoyo.css' %}">
+
+<div class="apoyo-container">
+    <div class="header-apoyo">
+        <img src="{% static 'imagenes/logo_universidad_del_rosario.png' %}" alt="Logo institucional" class="logo-apoyo">
+        <h2>📢 Canales de Apoyo Rosarista</h2>
+        <p class="intro-text">Explora herramientas, recursos y contactos para potenciar tu bienestar físico, mental y académico.</p>
+    </div>
+
+    <div class="canales-lista">
+        <div class="canal-card">
+            <img src="{% static 'imagenes/apoyo1.png' %}" alt="NutriFit">
+            <h3>🍏 NutriFit</h3>
+            <p>Asesoría nutricional especializada en deportistas. Aprende a alimentarte como un pro.</p>
+            <a href="https://nutrifit.com" target="_blank">Acceder</a>
+        </div>
+
+        <div class="canal-card">
+            <img src="{% static 'imagenes/apoyo2.png' %}" alt="GymBro">
+            <h3>💪 GymBro</h3>
+            <p>Encuentra rutinas de entrenamiento y consejos fitness. ¡Forma parte de una comunidad activa!</p>
+            <a href="https://gymbro.com" target="_blank">Acceder</a>
+        </div>
+
+        <div class="canal-card">
+            <img src="{% static 'imagenes/apoyo3.png' %}" alt="BienestarU">
+            <h3>🧘 BienestarU</h3>
+            <p>Espacio de salud mental, relajación y orientación emocional para estudiantes rosaristas.</p>
+            <a href="https://bienestaru.com" target="_blank">Acceder</a>
+        </div>
+    </div>
+
+    <div class="cta-apoyo">
+        <p>¿Conoces otro canal útil para tus compañeros? ¡Hazlo visible!</p>
+        <a href="#">Sugerir un canal</a>
+    </div>
+
+    <div class="contacto-apoyo">
+        <h3>📞 Contacto LunchUR</h3>
+        <p>Información general: <strong>3128991399</strong></p>
+        <p>Soporte Hardware: <strong>3185927261</strong></p>
+        <p>Soporte Software: <strong>3160993798</strong> / <strong>3243040618</strong></p>
+    </div>
+</div>
+
+{% endblock %}
+

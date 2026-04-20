@@ -1,0 +1,106 @@
+.apoyo-container {
+    background-color: #fff;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #4b1e24; /* Vinotinto institucional */
+}
+
+.header-apoyo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-apoyo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #6e2c2c;
+}
+
+.canales-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-around;
+}
+
+.canal-card {
+    flex: 1 1 280px;
+    background-color: #f9f5f1;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.canal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.canal-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+}
+
+.canal-card h3 {
+    margin: 0.5rem 0;
+    color: #a01c2f; /* Vinotinto más fuerte */
+}
+
+.canal-card p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.canal-card a {
+    margin-top: 0.5rem;
+    display: inline-block;
+    background-color: #a01c2f;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.canal-card a:hover {
+    background-color: #7b1523;
+}
+
+.cta-apoyo {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cta-apoyo a {
+    background-color: #e9b949; /* Dorado institucional */
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    color: #730217;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-apoyo a:hover {
+    background-color: #d4a437;
+}
+
+.contacto-apoyo {
+    margin-top: 2.5rem;
+    background-color: #730217;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}

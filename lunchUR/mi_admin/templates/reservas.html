@@ -1,0 +1,45 @@
+{% extends 'Layouts/base_home.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/reservas.css' %}">
+
+<div class="reservas-container animate__animated animate__fadeIn">
+    <h2 class="titulo">🍽️ Reserva tu Menú</h2>
+
+    {% if messages %}
+         <div class="messages">
+             {% for message in messages %}
+                 <div class="alert {{ message.tags }}">
+                     {{ message }}
+                 </div>
+             {% endfor %}
+         </div>
+     {% endif %}
+
+    <form method="POST" class="formulario-reserva">
+        {% csrf_token %}
+        <label for="fecha_reserva">Selecciona la fecha y hora:</label>
+        <input type="datetime-local" name="fecha_reserva" required>
+        
+        <label for="menu">Elige tu plato:</label>
+        <select name="menu" id="menu" required>
+            {% for item in menus %}
+                <option value="{{ item.id }}">{{ item.nombre_menu  }} - {{ item.descripcion }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="btn-reservar">Reservar</button>
+    </form>
+
+    {% if reservas %}
+        <div class="mis-reservas">
+            <h3>📝 Mis Reservas</h3>    
+            <div class="ver-mis-reservas">
+                <a href="{% url 'boton_reservas' %}" class="btn-reservar">📝 Ver Mis Reservas</a>
+            </div>  
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

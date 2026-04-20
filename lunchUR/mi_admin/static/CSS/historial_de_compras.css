@@ -1,0 +1,61 @@
+.historial-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.historial-container h1 {
+    color: #990000;
+    margin-bottom: 30px;
+}
+
+.compras-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.compras-table th, .compras-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.compras-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.compras-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.compras-table td {
+    font-size: 14px;
+    color: #555;
+}
+
+.compras-table td strong {
+    color: #990000;
+}
+
+.compras-table th, .compras-table td {
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.compras-table tr:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.02);
+}
+
+.compras-table td, .compras-table th {
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.compras-table td:hover {
+    transform: scale(1.05);
+}

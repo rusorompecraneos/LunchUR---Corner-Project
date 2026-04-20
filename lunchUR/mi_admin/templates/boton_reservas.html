@@ -1,0 +1,17 @@
+{% extends 'Layouts/base_home.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/boton_reservas.css' %}">
+
+<div class="mis-reservas animate__animated animate__fadeIn">
+    <h3>📝 Mis Reservas</h3>    
+    {% for reserva in reservas %}
+        <div class="reserva-item animate__animated animate__fadeInUp">
+            <p><strong>Fecha:</strong> {{ reserva.fecha_reserva }}</p>
+            <p><strong>Estado:</strong> {{ reserva.estado }}</p>
+            <p><strong>Menú:</strong> {{ reserva.menu.nombre }} - {{ reserva.menu.descripcion }}</p>
+            <p><strong>Número de Reserva:</strong> #{{ reserva.numero_aleatorio }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

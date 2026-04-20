@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a LunchUR</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">LunchUR</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> HOME </a></li>
+            <li><a href="{% url 'crear_plan' %}"><i class="fas fa-hands-helping"></i> Planes nutricionales</a></li>
+            <li><a href="{% url 'reservas' %}"><i class="fas fa-user-plus"></i> Reservar mi almuerzo</a></li>
+            <li><a href="{% url 'productos_populares' %}"><i class="fas fa-user-plus"></i> Productos populares</a></li>
+            <li><a href="{% url 'productos' %}"><i class="fas fa-utensils"></i> Nuestros productos</a></li>
+            <li><a href="{% url 'ofertas' %}"><i class="fas fa-utensils"></i> Promociones del día</a></li>
+            <li><a href="{% url 'perfil_usuario' %}"><i class="fas fa-hands-helping"></i> Mi perfil </a></li>
+            <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Cerrar sesion</a></li>
+            
+            
+
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
